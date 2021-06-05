@@ -1,13 +1,19 @@
 import React from "react";
 import { Text, TextInput, View, StyleSheet, TouchableOpacity } from "react-native";
+import { StackNavigationProp } from "@react-navigation/stack";
 
 import { Header } from "../components";
 import { RightArrow } from "../components/icons";
+import { RootStackParamList } from "../types";
 
-export default function Auth() {
+interface AuthType {
+  navigation: StackNavigationProp<RootStackParamList, "Root">;
+}
+
+export default function Auth({ navigation }: AuthType) {
   return (
     <View style={{ backgroundColor: "#F6F6F6" }}>
-      <Header center="Phone number" right="Done" />
+      <Header center="Phone number" right="Done" action={() => navigation.navigate("Root")} />
       <View style={{ backgroundColor: "#FFFFFF", height: "100%" }}>
         <View style={Styles.pleaseConfirm}>
           <Text style={{ textAlign: "center", fontSize: 15 }}>

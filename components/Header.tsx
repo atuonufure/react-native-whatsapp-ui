@@ -1,7 +1,13 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+interface HeaderType {
+  left?: string;
+  center?: string;
+  right?: string;
+  action?: () => void;
+}
 
-export default function Header({ left, center, right }: any) {
+export default function Header({ left, center, right, action }: HeaderType) {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={{ flexBasis: "23%" }}>
@@ -10,7 +16,7 @@ export default function Header({ left, center, right }: any) {
       <View style={{ flexBasis: "54%" }}>
         <Text style={{ alignSelf: "center", fontWeight: "bold", fontSize: 17 }}>{center}</Text>
       </View>
-      <TouchableOpacity style={{ flexBasis: "23%" }}>
+      <TouchableOpacity style={{ flexBasis: "23%" }} onPress={action}>
         {right ? <Text style={styles.right}>{right}</Text> : null}
       </TouchableOpacity>
     </View>

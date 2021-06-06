@@ -1,7 +1,7 @@
 import * as React from "react";
 import Svg, { SvgProps, Path } from "react-native-svg";
 
-function RightArrow(props: SvgProps) {
+function RightArrowIcon(props: SvgProps) {
   return (
     <Svg
       width={9}
@@ -20,4 +20,4 @@ function RightArrow(props: SvgProps) {
   );
 }
 
-export default RightArrow;
+export default RightArrowIcon;

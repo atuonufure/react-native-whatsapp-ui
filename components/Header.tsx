@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+
 interface HeaderType {
   left?: string;
   center?: string;

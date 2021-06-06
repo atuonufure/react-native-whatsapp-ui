@@ -3,7 +3,7 @@ import { Text, TextInput, View, StyleSheet, TouchableOpacity } from "react-nativ
 import { StackNavigationProp } from "@react-navigation/stack";
 
 import { Header } from "../components";
-import { RightArrow } from "../components/icons";
+import { RightArrowIcon } from "../components/icons";
 import { RootStackParamList } from "../types";
 
 interface AuthType {
@@ -24,7 +24,7 @@ export default function Auth({ navigation }: AuthType) {
           <TouchableOpacity style={Styles.inputContainer}>
             <Text style={Styles.country}>United States</Text>
             <View style={Styles.rightArrow}>
-              <RightArrow />
+              <RightArrowIcon />
             </View>
           </TouchableOpacity>
           <View style={[{ borderTopWidth: 0.5 }, Styles.inputContainer, Styles.border]}>

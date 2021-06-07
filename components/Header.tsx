@@ -11,13 +11,13 @@ interface HeaderType {
 export default function Header({ left, center, right, action }: HeaderType) {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={{ flexBasis: "23%" }}>
-        {left ? <Text style={{ alignSelf: "flex-start" }}>{left}</Text> : null}
+      <TouchableOpacity style={styles.leftLink}>
+        {left ? <Text style={styles.left}>{left}</Text> : null}
       </TouchableOpacity>
-      <View style={{ flexBasis: "54%" }}>
-        <Text style={{ alignSelf: "center", fontWeight: "bold", fontSize: 17 }}>{center}</Text>
+      <View style={styles.header}>
+        <Text style={styles.center}>{center}</Text>
       </View>
-      <TouchableOpacity style={{ flexBasis: "23%" }} onPress={action}>
+      <TouchableOpacity style={styles.rightLink} onPress={action}>
         {right ? <Text style={styles.right}>{right}</Text> : null}
       </TouchableOpacity>
     </View>
@@ -32,11 +32,28 @@ const styles = StyleSheet.create({
     marginTop: 44,
     height: 44,
   },
+  left: {
+    alignSelf: "flex-start",
+  },
   right: {
     alignSelf: "flex-end",
     fontWeight: "bold",
     color: "#D1D1D6",
     paddingRight: 16,
     fontSize: 17,
+  },
+  center: {
+    alignSelf: "center",
+    fontWeight: "bold",
+    fontSize: 17,
+  },
+  leftLink: {
+    flexBasis: "23%",
+  },
+  rightLink: {
+    flexBasis: "23%",
+  },
+  header: {
+    flexBasis: "54%",
   },
 });

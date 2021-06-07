@@ -12,28 +12,28 @@ interface AuthType {
 
 export default function Auth({ navigation }: AuthType) {
   return (
-    <View style={{ backgroundColor: "#F6F6F6" }}>
+    <View style={styles.container}>
       <Header center="Phone number" right="Done" action={() => navigation.navigate("Root")} />
-      <View style={{ backgroundColor: "#FFFFFF", height: "100%" }}>
-        <View style={Styles.pleaseConfirm}>
-          <Text style={{ textAlign: "center", fontSize: 15 }}>
+      <View style={styles.background}>
+        <View style={styles.pleaseConfirm}>
+          <Text style={styles.confirmText}>
             Please confirm your country code and{`\n`}enter your phone number
           </Text>
         </View>
-        <View style={[{ borderTopWidth: 0.5, borderBottomWidth: 0.5 }, Styles.border]}>
-          <TouchableOpacity style={Styles.inputContainer}>
-            <Text style={Styles.country}>United States</Text>
-            <View style={Styles.rightArrow}>
+        <View style={[styles.countryBorder, styles.border]}>
+          <TouchableOpacity style={styles.inputContainer}>
+            <Text style={styles.country}>United States</Text>
+            <View style={styles.rightArrow}>
               <RightArrowIcon />
             </View>
           </TouchableOpacity>
-          <View style={[{ borderTopWidth: 0.5 }, Styles.inputContainer, Styles.border]}>
-            <Text style={[Styles.countryCode, Styles.border]}>+1</Text>
+          <View style={[styles.codeBorder, styles.inputContainer, styles.border]}>
+            <Text style={[styles.countryCode, styles.border]}>+1</Text>
             <TextInput
               placeholder="phone number"
               placeholderTextColor="#C7C7CC"
               keyboardType="numeric"
-              style={{ fontSize: 26, paddingLeft: 9.5, paddingHorizontal: 7 }}
+              style={styles.numberInput}
             />
           </View>
         </View>
@@ -42,7 +42,7 @@ export default function Auth({ navigation }: AuthType) {
   );
 }
 
-const Styles = StyleSheet.create({
+const styles = StyleSheet.create({
   pleaseConfirm: {
     justifyContent: "center",
     alignItems: "center",
@@ -76,5 +76,28 @@ const Styles = StyleSheet.create({
     paddingBottom: 5,
     paddingRight: 28.5,
     borderRightWidth: 0.2,
+  },
+  container: {
+    backgroundColor: "#F6F6F6",
+  },
+  background: {
+    backgroundColor: "#FFFFFF",
+    height: "100%",
+  },
+  confirmText: {
+    textAlign: "center",
+    fontSize: 15,
+  },
+  countryBorder: {
+    borderTopWidth: 0.5,
+    borderBottomWidth: 0.5,
+  },
+  codeBorder: {
+    borderTopWidth: 0.5,
+  },
+  numberInput: {
+    fontSize: 26,
+    paddingLeft: 9.5,
+    paddingHorizontal: 7,
   },
 });

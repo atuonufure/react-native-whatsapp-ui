@@ -1,30 +1,21 @@
 import * as React from "react";
 import { StyleSheet } from "react-native";
 
+import { Header, SubMenu } from "../../components";
+import { EditChatsIcon } from "../../components/icons";
 import { Text, View } from "../../components/Themed";
 
 export default function Chats() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Chats</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+      <Header left="Edit" center="Chats" right={<EditChatsIcon />} action={() => {}} />
+      <SubMenu />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
+    backgroundColor: "#F6F6F6",
   },
 });

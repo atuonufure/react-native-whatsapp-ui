@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 interface HeaderType {
   left?: string;
   center?: string;
-  right?: string;
+  right?: string | JSX.Element;
   action?: () => void;
 }
 
@@ -34,6 +34,9 @@ const styles = StyleSheet.create({
   },
   left: {
     alignSelf: "flex-start",
+    paddingLeft: 12,
+    color: "#007AFF",
+    fontSize: 17,
   },
   right: {
     alignSelf: "flex-end",

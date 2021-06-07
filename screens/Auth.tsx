@@ -43,6 +43,9 @@ export default function Auth({ navigation }: AuthType) {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#F6F6F6",
+  },
   pleaseConfirm: {
     justifyContent: "center",
     alignItems: "center",
@@ -76,9 +79,6 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
     paddingRight: 28.5,
     borderRightWidth: 0.2,
-  },
-  container: {
-    backgroundColor: "#F6F6F6",
   },
   background: {
     backgroundColor: "#FFFFFF",

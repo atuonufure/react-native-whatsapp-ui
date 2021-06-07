@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
+import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
 import { RightArrowIcon } from "../../components/icons";
 
 interface ChatsItemType {
@@ -10,9 +10,8 @@ interface ChatsItemType {
 }
 
 export default function ChatsItem({ name, lastMessage, date, avatar }: ChatsItemType) {
-  console.log(avatar);
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container}>
       <View style={styles.avatarPart}>
         <Image source={require("../../assets/avatars/AndrewParker.png")} style={styles.avatar} />
       </View>
@@ -28,7 +27,7 @@ export default function ChatsItem({ name, lastMessage, date, avatar }: ChatsItem
       <View style={styles.arrowPart}>
         <RightArrowIcon />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 

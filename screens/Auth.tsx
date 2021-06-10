@@ -1,5 +1,11 @@
 import React from "react";
-import { Text, TextInput, View, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  Text,
+  TextInput,
+  View,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
 
 import { Header } from "../components";
@@ -13,7 +19,11 @@ interface AuthType {
 export default function Auth({ navigation }: AuthType) {
   return (
     <View style={styles.container}>
-      <Header center="Phone number" right="Done" action={() => navigation.navigate("Root")} />
+      <Header
+        center="Phone number"
+        right="Done"
+        action={() => navigation.navigate("Root")}
+      />
       <View style={styles.background}>
         <View style={styles.pleaseConfirm}>
           <Text style={styles.confirmText}>
@@ -27,7 +37,9 @@ export default function Auth({ navigation }: AuthType) {
               <RightArrowIcon />
             </View>
           </TouchableOpacity>
-          <View style={[styles.codeBorder, styles.inputContainer, styles.border]}>
+          <View
+            style={[styles.codeBorder, styles.inputContainer, styles.border]}
+          >
             <Text style={[styles.countryCode, styles.border]}>+1</Text>
             <TextInput
               placeholder="phone number"

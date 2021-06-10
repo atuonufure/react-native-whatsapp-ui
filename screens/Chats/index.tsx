@@ -1,16 +1,22 @@
 import * as React from "react";
 import { ScrollView, StyleSheet } from "react-native";
+
 import { Header } from "../../components";
 import { EditChatsIcon } from "../../components/icons";
 import { Text, View } from "../../components/Themed";
 import SubMenu from "./SubMenu";
-import { chats } from "./data";
+import { chats } from "../../constants/Data";
 import ChatsItem from "./ChatsItem";
 
 export default function Chats() {
   return (
     <View style={styles.container}>
-      <Header left="Edit" center="Chats" right={<EditChatsIcon />} action={() => {}} />
+      <Header
+        left="Edit"
+        center="Chats"
+        right={<EditChatsIcon />}
+        action={() => {}}
+      />
       <SubMenu />
       <ScrollView>
         {chats.length > 0 ? (

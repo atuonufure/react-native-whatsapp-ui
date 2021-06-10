@@ -1,6 +1,8 @@
 import React from "react";
-import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+
 import { RightArrowIcon } from "../../components/icons";
+import { MockAvatar } from "../../components";
 
 interface ChatsItemType {
   name: string;
@@ -9,11 +11,16 @@ interface ChatsItemType {
   avatar: string;
 }
 
-export default function ChatsItem({ name, lastMessage, date, avatar }: ChatsItemType) {
+export default function ChatsItem({
+  name,
+  lastMessage,
+  date,
+  avatar,
+}: ChatsItemType) {
   return (
     <TouchableOpacity style={styles.container}>
       <View style={styles.avatarPart}>
-        <Image source={require("../../assets/avatars/AndrewParker.png")} style={styles.avatar} />
+        <MockAvatar avatar={avatar} />
       </View>
       <View style={styles.messagePart}>
         <View style={styles.upperMessagePart}>
@@ -41,16 +48,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  avatar: {
-    width: 52,
-    height: 52,
-    borderRadius: 26,
-    marginLeft: 16,
-    marginRight: 12,
-  },
   arrowPart: {
     width: 35,
     paddingLeft: 10,
+    // marginRight: 1,
     justifyContent: "center",
     alignItems: "center",
     borderBottomWidth: 0.33,
@@ -78,7 +79,8 @@ const styles = StyleSheet.create({
   },
   message: {
     fontSize: 14,
-    paddingTop: 11,
+    paddingTop: 6,
     color: "#8E8E93",
+    width: 200,
   },
 });

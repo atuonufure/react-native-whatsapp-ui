@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   arrowPart: {
     width: 35,
     paddingLeft: 10,
-    // marginRight: 1,
+    marginRight: 8,
     justifyContent: "center",
     alignItems: "center",
     borderBottomWidth: 0.33,

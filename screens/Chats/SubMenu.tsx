@@ -1,15 +1,34 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-export default function SubMenu() {
+interface SubMenuType {
+  editMode: boolean;
+}
+
+export default function SubMenu({ editMode }: SubMenuType) {
   return (
     <View style={styles.container}>
-      <TouchableOpacity>
-        <Text style={styles.text}>Broadcast Lists</Text>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Text style={styles.text}>New group</Text>
-      </TouchableOpacity>
+      {!editMode ? (
+        <>
+          <TouchableOpacity>
+            <Text style={[styles.text]}>Broadcast Lists</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={[styles.text]}>New group</Text>
+          </TouchableOpacity>
+        </>
+      ) : (
+        <>
+          <View>
+            <Text style={[styles.text, { color: "#C7C7CC" }]}>
+              Broadcast Lists
+            </Text>
+          </View>
+          <View>
+            <Text style={[styles.text, { color: "#C7C7CC" }]}>New group</Text>
+          </View>
+        </>
+      )}
     </View>
   );
 }

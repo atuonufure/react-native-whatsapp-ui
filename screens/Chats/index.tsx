@@ -9,15 +9,31 @@ import { chats } from "../../constants/Data";
 import ChatsItem from "./ChatsItem";
 
 export default function Chats() {
+  const [editMode, setEditMode] = React.useState(false);
   return (
-    <View style={styles.container}>
+    <View
+      style={[
+        styles.container,
+        !editMode
+          ? {
+              backgroundColor: "#F6F6F6",
+            }
+          : null,
+      ]}
+    >
       <Header
         left="Edit"
         center="Chats"
+        editMode={editMode}
         right={<EditChatsIcon />}
-        action={() => {}}
+        action={() => setEditMode(!editMode)}
       />
-      <SubMenu />
+      {!editMode ? null : (
+        <View>
+          <Text style={styles.chats}>Chats</Text>
+        </View>
+      )}
+      <SubMenu editMode={editMode} />
       <ScrollView>
         {chats.length > 0 ? (
           chats.map((el) => (
@@ -42,6 +58,6 @@ export default function Chats() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F6F6F6",
   },
+  chats: { fontSize: 34, fontWeight: "bold", marginLeft: 16 },
 });

@@ -6,20 +6,39 @@ interface HeaderType {
   center?: string;
   right?: string | JSX.Element;
   action?: () => void;
+  editMode: boolean;
 }
 
-export default function Header({ left, center, right, action }: HeaderType) {
+export default function Header({
+  left,
+  center,
+  right,
+  action,
+  editMode,
+}: HeaderType) {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.leftLink}>
-        {left ? <Text style={styles.left}>{left}</Text> : null}
-      </TouchableOpacity>
-      <View style={styles.header}>
-        <Text style={styles.center}>{center}</Text>
-      </View>
-      <TouchableOpacity style={styles.rightLink} onPress={action}>
-        {right ? <Text style={styles.right}>{right}</Text> : null}
-      </TouchableOpacity>
+      {!editMode ? (
+        <>
+          <TouchableOpacity style={styles.leftLink}>
+            {left ? <Text style={styles.left}>{left}</Text> : null}
+          </TouchableOpacity>
+          <View style={styles.header}>
+            <Text style={styles.center}>{center}</Text>
+          </View>
+          <TouchableOpacity style={styles.rightLink} onPress={action}>
+            {right ? <Text style={styles.right}>{right}</Text> : null}
+          </TouchableOpacity>
+        </>
+      ) : (
+        <>
+          <TouchableOpacity onPress={action}>
+            <View>
+              <Text style={styles.done}>Done</Text>
+            </View>
+          </TouchableOpacity>
+        </>
+      )}
     </View>
   );
 }
@@ -58,5 +77,11 @@ const styles = StyleSheet.create({
   },
   header: {
     flexBasis: "54%",
+  },
+  done: {
+    color: "#007AFF",
+    fontSize: 17,
+    fontWeight: "bold",
+    marginLeft: 16,
   },
 });

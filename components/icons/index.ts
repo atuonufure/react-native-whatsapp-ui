@@ -5,3 +5,5 @@ export { default as ChatsIcon } from "./ChatsIcon";
 export { default as SettingsIcon } from "./SettingsIcon";
 export { default as StatusIcon } from "./StatusIcon";
 export { default as EditChatsIcon } from "./EditChatsIcon";
+export { default as MoreIcon } from "./MoreIcon";
+export { default as ArchiveIcon } from "./ArchiveIcon";

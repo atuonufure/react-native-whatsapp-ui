@@ -1,8 +1,9 @@
 import * as React from "react";
-import { ScrollView, StyleSheet } from "react-native";
+import { ScrollView, StyleSheet, TouchableOpacity } from "react-native";
+import { SwipeRow } from "react-native-swipe-list-view";
 
 import { Header } from "../../components";
-import { EditChatsIcon } from "../../components/icons";
+import { ArchiveIcon, EditChatsIcon, MoreIcon } from "../../components/icons";
 import { Text, View } from "../../components/Themed";
 import SubMenu from "./SubMenu";
 import { chats } from "../../constants/Data";
@@ -13,7 +14,7 @@ export default function Chats() {
   return (
     <View
       style={[
-        styles.container,
+        styles.containerMain,
         !editMode
           ? {
               backgroundColor: "#F6F6F6",
@@ -37,13 +38,45 @@ export default function Chats() {
       <ScrollView>
         {chats.length > 0 ? (
           chats.map((el) => (
-            <ChatsItem
-              key={el.id}
-              name={el.name}
-              lastMessage={el.lastMessage}
-              date={el.date}
-              avatar={el.avatar}
-            />
+            <>
+              <View style={styles.container}>
+                <SwipeRow rightOpenValue={-148}>
+                  <View style={styles.standaloneRowBack}>
+                    <TouchableOpacity
+                      style={[
+                        styles.subMenu,
+                        {
+                          backgroundColor: "#C6C6CC",
+                        },
+                      ]}
+                    >
+                      <View style={{ marginBottom: 13.5 }}>
+                        <MoreIcon />
+                      </View>
+                      <Text style={[styles.backTextWhite]}>More</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                      style={[
+                        styles.subMenu,
+                        {
+                          backgroundColor: "#3E70A7",
+                        },
+                      ]}
+                    >
+                      <ArchiveIcon />
+                      <Text style={styles.backTextWhite}>Archive</Text>
+                    </TouchableOpacity>
+                  </View>
+                  <ChatsItem
+                    key={el.id}
+                    name={el.name}
+                    lastMessage={el.lastMessage}
+                    date={el.date}
+                    avatar={el.avatar}
+                  />
+                </SwipeRow>
+              </View>
+            </>
           ))
         ) : (
           <View>
@@ -56,8 +89,34 @@ export default function Chats() {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  containerMain: {
     flex: 1,
   },
   chats: { fontSize: 34, fontWeight: "bold", marginLeft: 16 },
+  container: {
+    backgroundColor: "white",
+    flex: 1,
+  },
+  standaloneRowFront: {
+    alignItems: "center",
+    backgroundColor: "#CCC",
+    justifyContent: "center",
+    height: 74,
+  },
+  standaloneRowBack: {
+    alignItems: "center",
+    flex: 1,
+    height: "100%",
+    flexDirection: "row",
+    justifyContent: "flex-end",
+  },
+  backTextWhite: {
+    color: "#FFF",
+    fontSize: 14,
+  },
+  subMenu: {
+    width: 74,
+    alignItems: "center",
+    paddingVertical: "100%",
+  },
 });

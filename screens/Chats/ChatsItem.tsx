@@ -18,23 +18,25 @@ export default function ChatsItem({
   avatar,
 }: ChatsItemType) {
   return (
-    <TouchableOpacity style={styles.container}>
-      <View style={styles.avatarPart}>
-        <MockAvatar avatar={avatar} />
-      </View>
-      <View style={styles.messagePart}>
-        <View style={styles.upperMessagePart}>
-          <Text style={styles.name}>{name}</Text>
-          <Text style={styles.date}>{date}</Text>
+    <View style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
+      <TouchableOpacity style={styles.container}>
+        <View style={styles.avatarPart}>
+          <MockAvatar avatar={avatar} />
         </View>
-        <View>
-          <Text style={styles.message}>{lastMessage}</Text>
+        <View style={styles.messagePart}>
+          <View style={styles.upperMessagePart}>
+            <Text style={styles.name}>{name}</Text>
+            <Text style={styles.date}>{date}</Text>
+          </View>
+          <View>
+            <Text style={styles.message}>{lastMessage}</Text>
+          </View>
         </View>
-      </View>
-      <View style={styles.arrowPart}>
-        <RightArrowIcon />
-      </View>
-    </TouchableOpacity>
+        <View style={styles.arrowPart}>
+          <RightArrowIcon />
+        </View>
+      </TouchableOpacity>
+    </View>
   );
 }
 

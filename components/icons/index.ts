@@ -11,3 +11,4 @@ export { default as SelectIcon } from "./SelectIcon";
 export { default as ReadIcon } from "./ReadIcon";
 export { default as VoiceRecordIcon } from "./VoiceRecordIcon";
 export { default as PhotoIcon } from "./PhotoIcon";
+export { default as BackArrowIcon } from "./BackArrowIcon";

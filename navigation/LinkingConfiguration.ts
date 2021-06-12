@@ -6,16 +6,11 @@ export default {
     screens: {
       Root: {
         screens: {
-          TabOne: {
-            screens: {
-              TabOneScreen: "one",
-            },
-          },
-          TabTwo: {
-            screens: {
-              TabTwoScreen: "two",
-            },
-          },
+          Calls: {},
+          Camera: {},
+          Chats: {},
+          Settings: {},
+          Status: {},
         },
       },
       NotFound: "*",

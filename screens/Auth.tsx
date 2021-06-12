@@ -12,9 +12,9 @@ import { Header } from "../components";
 import { RightArrowIcon } from "../components/icons";
 import { RootStackParamList } from "../types";
 
-interface AuthType {
+type AuthType = {
   navigation: StackNavigationProp<RootStackParamList, "Root">;
-}
+};
 
 export default function Auth({ navigation }: AuthType) {
   return (

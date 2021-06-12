@@ -1,12 +1,12 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-interface HeaderType {
+type HeaderType = {
   left?: string;
   center?: string;
   right?: string | JSX.Element;
   action?: () => void;
-  editMode: boolean;
+  editMode?: boolean;
 }
 
 export default function Header({

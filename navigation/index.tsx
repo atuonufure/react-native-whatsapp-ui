@@ -13,6 +13,7 @@ import { RootStackParamList } from "../types";
 import BottomTabNavigator from "./BottomTabNavigator";
 import LinkingConfiguration from "./LinkingConfiguration";
 import Auth from "../screens/Auth";
+import Chat from "../screens/Chat";
 import { ModalWrapper } from "../components";
 
 export default function Navigation({
@@ -33,7 +34,7 @@ export default function Navigation({
 const Stack = createStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
-  const modal = useSelector((state) => state.modal.showModal);
+  const modal = useSelector((state: any) => state.modal.showModal);
   return (
     <>
       <Stack.Navigator
@@ -42,6 +43,7 @@ function RootNavigator() {
       >
         <Stack.Screen name="Auth" component={Auth} />
         <Stack.Screen name="Root" component={BottomTabNavigator} />
+        <Stack.Screen name="Chat" component={Chat} />
         <Stack.Screen
           name="NotFound"
           component={NotFoundScreen}

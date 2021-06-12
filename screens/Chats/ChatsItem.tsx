@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import {
   ReadIcon,
@@ -9,8 +10,7 @@ import {
   PhotoIcon,
 } from "../../components/icons";
 import { MockAvatar } from "../../components";
-
-interface ChatsItemType {
+type ChatsItemType = {
   name: string;
   lastMessage: string;
   date: string;
@@ -31,9 +31,13 @@ export default function ChatsItem({
     lastMessage.length > 24
       ? lastMessage.slice(0, 24).trim() + "..."
       : lastMessage;
+  const navigation = useNavigation();
   return (
     <View style={styles.subContainer}>
-      <TouchableOpacity style={styles.container}>
+      <TouchableOpacity
+        style={styles.container}
+        onPress={() => navigation.navigate("Chat", { name, avatar })}
+      >
         {editMode && (
           <View style={styles.select}>
             <SelectIcon />

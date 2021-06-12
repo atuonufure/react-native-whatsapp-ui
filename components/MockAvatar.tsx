@@ -1,12 +1,11 @@
 import React from "react";
 import { Image, View, StyleSheet } from "react-native";
 
-interface MockAvatarType {
+type MockAvatarType = {
   avatar?: string;
 }
 
 export default function MockAvatar({ avatar }: MockAvatarType) {
-  console.log(avatar);
   switch (avatar) {
     case "../assets/avatars/MartinRandolph.png":
       return (

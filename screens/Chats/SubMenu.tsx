@@ -1,9 +1,9 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-interface SubMenuType {
+type SubMenuType = {
   editMode: boolean;
-}
+};
 
 export default function SubMenu({ editMode }: SubMenuType) {
   return (

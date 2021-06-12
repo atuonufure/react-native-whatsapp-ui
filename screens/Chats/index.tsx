@@ -40,41 +40,54 @@ export default function Chats() {
           chats.map((el) => (
             <>
               <View style={styles.container}>
-                <SwipeRow rightOpenValue={-148}>
-                  <View style={styles.standaloneRowBack}>
-                    <TouchableOpacity
-                      style={[
-                        styles.subMenu,
-                        {
-                          backgroundColor: "#C6C6CC",
-                        },
-                      ]}
-                    >
-                      <View style={{ marginBottom: 13.5 }}>
-                        <MoreIcon />
-                      </View>
-                      <Text style={[styles.backTextWhite]}>More</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                      style={[
-                        styles.subMenu,
-                        {
-                          backgroundColor: "#3E70A7",
-                        },
-                      ]}
-                    >
-                      <ArchiveIcon />
-                      <Text style={styles.backTextWhite}>Archive</Text>
-                    </TouchableOpacity>
-                  </View>
+                {!editMode ? (
+                  <SwipeRow rightOpenValue={-148}>
+                    <View style={styles.standaloneRowBack}>
+                      <TouchableOpacity
+                        style={[
+                          styles.subMenu,
+                          {
+                            backgroundColor: "#C6C6CC",
+                            marginTop: 9,
+                          },
+                        ]}
+                      >
+                        <View style={{ marginBottom: 13.5 }}>
+                          <MoreIcon />
+                        </View>
+                        <Text style={[styles.backTextWhite]}>More</Text>
+                      </TouchableOpacity>
+                      <TouchableOpacity
+                        style={[
+                          styles.subMenu,
+                          {
+                            backgroundColor: "#3E70A7",
+                          },
+                        ]}
+                      >
+                        <ArchiveIcon />
+                        <Text style={styles.backTextWhite}>Archive</Text>
+                      </TouchableOpacity>
+                    </View>
+                    <ChatsItem
+                      key={el.id}
+                      name={el.name}
+                      lastMessage={el.lastMessage}
+                      date={el.date}
+                      avatar={el.avatar}
+                      editMode={editMode}
+                    />
+                  </SwipeRow>
+                ) : (
                   <ChatsItem
                     key={el.id}
                     name={el.name}
                     lastMessage={el.lastMessage}
                     date={el.date}
                     avatar={el.avatar}
+                    editMode={editMode}
                   />
-                </SwipeRow>
+                )}
               </View>
             </>
           ))

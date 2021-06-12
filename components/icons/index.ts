@@ -7,3 +7,4 @@ export { default as StatusIcon } from "./StatusIcon";
 export { default as EditChatsIcon } from "./EditChatsIcon";
 export { default as MoreIcon } from "./MoreIcon";
 export { default as ArchiveIcon } from "./ArchiveIcon";
+export { default as SelectIcon } from "./SelectIcon";

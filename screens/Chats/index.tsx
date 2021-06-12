@@ -1,13 +1,14 @@
 import * as React from "react";
-import { ScrollView, StyleSheet, TouchableOpacity } from "react-native";
+import { Alert, ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 import { SwipeRow } from "react-native-swipe-list-view";
 
 import { Header } from "../../components";
 import { ArchiveIcon, EditChatsIcon, MoreIcon } from "../../components/icons";
 import { Text, View } from "../../components/Themed";
 import SubMenu from "./SubMenu";
-import { chats } from "../../data/data";
 import ChatsItem from "./ChatsItem";
+
+import { chats } from "../../data/data";
 
 export default function Chats() {
   const [editMode, setEditMode] = React.useState(false);
@@ -15,11 +16,7 @@ export default function Chats() {
     <View
       style={[
         styles.containerMain,
-        !editMode
-          ? {
-              backgroundColor: "#F6F6F6",
-            }
-          : null,
+        !editMode && { backgroundColor: "#F6F6F6" },
       ]}
     >
       <Header
@@ -29,7 +26,7 @@ export default function Chats() {
         right={<EditChatsIcon />}
         action={() => setEditMode(!editMode)}
       />
-      {!editMode ? null : (
+      {editMode && (
         <View>
           <Text style={styles.chats}>Chats</Text>
         </View>
@@ -44,6 +41,9 @@ export default function Chats() {
                   <SwipeRow rightOpenValue={-148}>
                     <View style={styles.standaloneRowBack}>
                       <TouchableOpacity
+                        onPress={() => {
+                          Alert.alert("More pressed");
+                        }}
                         style={[
                           styles.subMenu,
                           {

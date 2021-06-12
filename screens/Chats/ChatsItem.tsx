@@ -16,7 +16,7 @@ interface ChatsItemType {
   date: string;
   avatar: string;
   editMode: boolean;
-  messageIcon: string | null;
+  messageIcon?: string | null;
 }
 
 export default function ChatsItem({
@@ -27,6 +27,10 @@ export default function ChatsItem({
   editMode,
   messageIcon,
 }: ChatsItemType) {
+  const editedMessage =
+    lastMessage.length > 24
+      ? lastMessage.slice(0, 24).trim() + "..."
+      : lastMessage;
   return (
     <View style={styles.subContainer}>
       <TouchableOpacity style={styles.container}>
@@ -47,19 +51,19 @@ export default function ChatsItem({
           </View>
           <View style={styles.message}>
             {messageIcon && (
-              <>
+              <View style={{ marginTop: 8 }}>
                 {messageIcon === "read" && (
-                  <ReadIcon style={{ marginTop: 8, marginRight: 2.5 }} />
+                  <ReadIcon style={{ marginRight: 2.5 }} />
                 )}
                 {messageIcon === "voicerecord" && (
-                  <VoiceRecordIcon style={{ marginTop: 8, marginRight: 5 }} />
+                  <VoiceRecordIcon style={{ marginRight: 5 }} />
                 )}
                 {messageIcon === "photo" && (
-                  <PhotoIcon style={{ marginTop: 8, marginRight: 4.5 }} />
+                  <PhotoIcon style={{ marginRight: 4.5 }} />
                 )}
-              </>
+              </View>
             )}
-            <Text style={styles.messageText}>{lastMessage}</Text>
+            <Text style={styles.messageText}>{editedMessage}</Text>
           </View>
         </View>
         {!editMode && (

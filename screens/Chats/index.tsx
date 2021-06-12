@@ -6,7 +6,7 @@ import { Header } from "../../components";
 import { ArchiveIcon, EditChatsIcon, MoreIcon } from "../../components/icons";
 import { Text, View } from "../../components/Themed";
 import SubMenu from "./SubMenu";
-import { chats } from "../../constants/Data";
+import { chats } from "../../data/data";
 import ChatsItem from "./ChatsItem";
 
 export default function Chats() {
@@ -38,7 +38,7 @@ export default function Chats() {
       <ScrollView>
         {chats.length > 0 ? (
           chats.map((el) => (
-            <>
+            <View key={el.id}>
               <View style={styles.container}>
                 {!editMode ? (
                   <SwipeRow rightOpenValue={-148}>
@@ -76,6 +76,7 @@ export default function Chats() {
                       date={el.date}
                       avatar={el.avatar}
                       editMode={editMode}
+                      messageIcon={el.icon}
                     />
                   </SwipeRow>
                 ) : (
@@ -89,7 +90,7 @@ export default function Chats() {
                   />
                 )}
               </View>
-            </>
+            </View>
           ))
         ) : (
           <View>

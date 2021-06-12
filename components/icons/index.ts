@@ -8,3 +8,6 @@ export { default as EditChatsIcon } from "./EditChatsIcon";
 export { default as MoreIcon } from "./MoreIcon";
 export { default as ArchiveIcon } from "./ArchiveIcon";
 export { default as SelectIcon } from "./SelectIcon";
+export { default as ReadIcon } from "./ReadIcon";
+export { default as VoiceRecordIcon } from "./VoiceRecordIcon";
+export { default as PhotoIcon } from "./PhotoIcon";

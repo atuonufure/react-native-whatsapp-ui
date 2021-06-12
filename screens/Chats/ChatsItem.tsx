@@ -1,7 +1,13 @@
 import React from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 
-import { RightArrowIcon, SelectIcon } from "../../components/icons";
+import {
+  ReadIcon,
+  RightArrowIcon,
+  SelectIcon,
+  VoiceRecordIcon,
+  PhotoIcon,
+} from "../../components/icons";
 import { MockAvatar } from "../../components";
 
 interface ChatsItemType {
@@ -10,6 +16,7 @@ interface ChatsItemType {
   date: string;
   avatar: string;
   editMode: boolean;
+  messageIcon: string | null;
 }
 
 export default function ChatsItem({
@@ -18,6 +25,7 @@ export default function ChatsItem({
   date,
   avatar,
   editMode,
+  messageIcon,
 }: ChatsItemType) {
   return (
     <View style={styles.subContainer}>
@@ -37,7 +45,22 @@ export default function ChatsItem({
               {date}
             </Text>
           </View>
-          <Text style={styles.message}>{lastMessage}</Text>
+          <View style={styles.message}>
+            {messageIcon && (
+              <>
+                {messageIcon === "read" && (
+                  <ReadIcon style={{ marginTop: 8, marginRight: 2.5 }} />
+                )}
+                {messageIcon === "voicerecord" && (
+                  <VoiceRecordIcon style={{ marginTop: 8, marginRight: 5 }} />
+                )}
+                {messageIcon === "photo" && (
+                  <PhotoIcon style={{ marginTop: 8, marginRight: 4.5 }} />
+                )}
+              </>
+            )}
+            <Text style={styles.messageText}>{lastMessage}</Text>
+          </View>
         </View>
         {!editMode && (
           <View style={styles.arrowPart}>
@@ -89,7 +112,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 16,
   },
-  message: {
+  messageText: {
     fontSize: 14,
     paddingTop: 6,
     color: "#8E8E93",
@@ -99,4 +122,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginLeft: 17,
   },
+  message: { flexDirection: "row", alignItems: "center" },
 });

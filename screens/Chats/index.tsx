@@ -1,7 +1,9 @@
 import * as React from "react";
-import { Alert, ScrollView, StyleSheet, TouchableOpacity } from "react-native";
+import { ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 import { SwipeRow } from "react-native-swipe-list-view";
+import { useDispatch } from "react-redux";
 
+import { setModalWindow } from "../../redux/modalSlice";
 import { Header } from "../../components";
 import { ArchiveIcon, EditChatsIcon, MoreIcon } from "../../components/icons";
 import { Text, View } from "../../components/Themed";
@@ -12,6 +14,7 @@ import { chats } from "../../data/data";
 
 export default function Chats() {
   const [editMode, setEditMode] = React.useState(false);
+  const dispatch = useDispatch();
   return (
     <View
       style={[
@@ -42,7 +45,7 @@ export default function Chats() {
                     <View style={styles.standaloneRowBack}>
                       <TouchableOpacity
                         onPress={() => {
-                          Alert.alert("More pressed");
+                          dispatch(setModalWindow(true));
                         }}
                         style={[
                           styles.subMenu,

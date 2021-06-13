@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import { BackArrowIcon, CallIcon, VideoCallIcon } from "../../components/icons";
@@ -13,42 +13,24 @@ type ChatHeaderType = {
 export default function ChatHeader({ name, avatar }: ChatHeaderType) {
   const navigation = useNavigation();
   return (
-    <View style={{ height: 88, justifyContent: "flex-end" }}>
-      <View style={{ height: 44, flexDirection: "row" }}>
+    <View style={styles.container}>
+      <View style={styles.bottomContainer}>
         <TouchableOpacity
-          style={{
-            width: 62,
-            justifyContent: "center",
-            paddingLeft: 9,
-          }}
+          style={styles.backArrow}
           onPress={() => navigation.navigate("Chats")}
         >
           <BackArrowIcon />
         </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            flexGrow: 1,
-            flexDirection: "row",
-            alignItems: "center",
-          }}
-        >
+        <TouchableOpacity style={styles.userInfo}>
           <View>
             <MockAvatar avatar={avatar} size={36} />
           </View>
           <View>
-            <Text style={{ fontWeight: "bold", fontSize: 16 }}>{name}</Text>
-            <Text style={{ fontSize: 12, color: "#8E8E93" }}>
-              tap here for contact info
-            </Text>
+            <Text style={styles.name}>{name}</Text>
+            <Text style={styles.tapInfo}>tap here for contact info</Text>
           </View>
         </TouchableOpacity>
-        <View
-          style={{
-            width: 90,
-            alignItems: "center",
-            flexDirection: "row",
-          }}
-        >
+        <View style={styles.callsContainer}>
           <TouchableOpacity style={{ paddingRight: 25 }}>
             <VideoCallIcon />
           </TouchableOpacity>
@@ -60,3 +42,13 @@ export default function ChatHeader({ name, avatar }: ChatHeaderType) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { height: 88, justifyContent: "flex-end" },
+  bottomContainer: { height: 44, flexDirection: "row" },
+  backArrow: { width: 62, justifyContent: "center", paddingLeft: 9 },
+  userInfo: { flexGrow: 1, flexDirection: "row", alignItems: "center" },
+  name: { fontWeight: "bold", fontSize: 16 },
+  tapInfo: { fontSize: 12, color: "#8E8E93" },
+  callsContainer: { width: 90, alignItems: "center", flexDirection: "row" },
+});

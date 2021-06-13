@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, Image } from "react-native";
 import ChatHeader from "./ChatHeader";
 import SendMessage from "./SendMessage";
 
@@ -12,8 +12,11 @@ export default function Chat({ route }: routeType) {
   return (
     <View style={{ flex: 1 }}>
       <ChatHeader name={name} avatar={avatar} />
-      <ScrollView style={{ flexGrow: 1, backgroundColor: "#fffbd4" }}>
-        <Text>Chat</Text>
+      <ScrollView>
+        <Image
+          style={{ width: "100%" }}
+          source={require("../../assets/images/chatBackground.png")}
+        />
       </ScrollView>
       <SendMessage />
     </View>

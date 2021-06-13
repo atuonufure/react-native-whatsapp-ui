@@ -36,7 +36,9 @@ export default function ChatsItem({
     <View style={styles.subContainer}>
       <TouchableOpacity
         style={styles.container}
-        onPress={() => navigation.navigate("Chat", { name, avatar })}
+        onPress={() =>
+          !editMode && navigation.navigate("Chat", { name, avatar })
+        }
       >
         {editMode && (
           <View style={styles.select}>

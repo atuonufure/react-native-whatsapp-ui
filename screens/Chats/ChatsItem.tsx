@@ -17,7 +17,7 @@ type ChatsItemType = {
   avatar: string;
   editMode: boolean;
   messageIcon?: string | null;
-}
+};
 
 export default function ChatsItem({
   name,
@@ -44,7 +44,7 @@ export default function ChatsItem({
           </View>
         )}
         <View style={styles.avatarPart}>
-          <MockAvatar avatar={avatar} />
+          <MockAvatar avatar={avatar} size={52} />
         </View>
         <View style={styles.messagePart}>
           <View style={styles.upperMessagePart}>

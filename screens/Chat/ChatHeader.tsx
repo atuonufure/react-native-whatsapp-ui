@@ -2,12 +2,13 @@ import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import { BackArrowIcon } from "../../components/icons";
+import { BackArrowIcon, CallIcon, VideoCallIcon } from "../../components/icons";
+import { MockAvatar } from "../../components";
 
 type ChatHeaderType = {
   name: string;
   avatar: string;
-}
+};
 
 export default function ChatHeader({ name, avatar }: ChatHeaderType) {
   const navigation = useNavigation();
@@ -24,19 +25,36 @@ export default function ChatHeader({ name, avatar }: ChatHeaderType) {
         >
           <BackArrowIcon />
         </TouchableOpacity>
-        <View
+        <TouchableOpacity
           style={{
             flexGrow: 1,
-            justifyContent: "center",
+            flexDirection: "row",
             alignItems: "center",
           }}
         >
-          <Text>{name}</Text>
-        </View>
+          <View>
+            <MockAvatar avatar={avatar} size={36} />
+          </View>
+          <View>
+            <Text style={{ fontWeight: "bold", fontSize: 16 }}>{name}</Text>
+            <Text style={{ fontSize: 12, color: "#8E8E93" }}>
+              tap here for contact info
+            </Text>
+          </View>
+        </TouchableOpacity>
         <View
-          style={{ width: 90, justifyContent: "center", alignItems: "center" }}
+          style={{
+            width: 90,
+            alignItems: "center",
+            flexDirection: "row",
+          }}
         >
-          <Text>Buttons</Text>
+          <TouchableOpacity style={{ paddingRight: 25 }}>
+            <VideoCallIcon />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <CallIcon />
+          </TouchableOpacity>
         </View>
       </View>
     </View>

@@ -12,3 +12,8 @@ export { default as ReadIcon } from "./ReadIcon";
 export { default as VoiceRecordIcon } from "./VoiceRecordIcon";
 export { default as PhotoIcon } from "./PhotoIcon";
 export { default as BackArrowIcon } from "./BackArrowIcon";
+export { default as VideoCallIcon } from "./VideoCallIcon";
+export { default as CallIcon } from "./CallIcon";
+export { default as AddIcon } from "./AddIcon";
+export { default as StickersIcon } from "./StickersIcon";
+export { default as RecordAudioIcon } from "./RecordAudioIcon";

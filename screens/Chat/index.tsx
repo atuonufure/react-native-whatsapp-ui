@@ -1,17 +1,21 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import ChatHeader from "./ChatHeader";
+import SendMessage from "./SendMessage";
 
 type routeType = {
   route: { params: { name: string; avatar: string } };
-}
+};
 
 export default function Chat({ route }: routeType) {
   const { name, avatar } = route.params;
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <ChatHeader name={name} avatar={avatar} />
-      <Text>Chat</Text>
+      <ScrollView style={{ flexGrow: 1, backgroundColor: "#fffbd4" }}>
+        <Text>Chat</Text>
+      </ScrollView>
+      <SendMessage />
     </View>
   );
 }

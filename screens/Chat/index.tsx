@@ -12,7 +12,7 @@ export default function Chat({ route }: routeType) {
   return (
     <View style={{ flex: 1 }}>
       <ChatHeader name={name} avatar={avatar} />
-      <ScrollView>
+      <ScrollView scrollEnabled={false}>
         <Image
           style={{ width: "100%" }}
           source={require("../../assets/images/chatBackground.png")}

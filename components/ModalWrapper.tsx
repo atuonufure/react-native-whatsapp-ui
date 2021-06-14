@@ -17,8 +17,9 @@ export default function ModalWrapper() {
   return (
     <View style={styles.container}>
       <View style={styles.main}>
-        {modalItems.map((el) => (
+        {modalItems.map((el, index) => (
           <View
+            key={`${el}${index}`}
             style={
               el != "Delete Chat" && {
                 borderBottomColor: "#C6C6C8",

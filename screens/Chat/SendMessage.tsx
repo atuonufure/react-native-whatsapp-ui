@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     paddingHorizontal: 10,
   },
-  container: { backgroundColor: "#F6F6F6", height: 80 },
+  container: { backgroundColor: "#F6F6F6", height: 46 },
   sticker: { position: "absolute", paddingRight: 7.5 },
   inputContainer: {
     flexDirection: "row",

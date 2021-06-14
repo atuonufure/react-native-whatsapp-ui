@@ -1,19 +1,34 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 import { View, Text, TouchableOpacity } from "react-native";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { setModalWindow } from "../redux/modalSlice";
 
 export default function ModalWrapper() {
-  const modalItems = [
-    "Mute",
-    "Contact Info",
-    "Export Chat",
-    "Clear Chat",
-    "Delete Chat",
-  ];
+  let modalItems: Array<string> = [];
   const dispatch = useDispatch();
+  const modalType = useSelector((state: any) => state.modal.modalType);
+  switch (modalType) {
+    case "chats":
+      modalItems = [
+        "Mute",
+        "Contact Info",
+        "Export Chat",
+        "Clear Chat",
+        "Delete Chat",
+      ];
+      break;
+    case "chat":
+      modalItems = [
+        "Camera",
+        "Photo & Video Library",
+        "Document",
+        "Location",
+        "Contact",
+      ];
+      break;
+  }
   return (
     <View style={styles.container}>
       <View style={styles.main}>
@@ -59,7 +74,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     width: "100%",
     height: "100%",
-    backgroundColor: "#00000040",
+    backgroundColor: "#00000060",
     justifyContent: "flex-end",
     alignItems: "center",
   },

@@ -1,13 +1,17 @@
 import React from "react";
 import { View, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+import { useDispatch } from "react-redux";
+
 import {
   AddIcon,
   StickersIcon,
   CameraIcon,
   RecordAudioIcon,
 } from "../../components/icons";
+import { setModalType, setModalWindow } from "../../redux/modalSlice";
 
 export default function SendMessage() {
+  const dispatch = useDispatch();
   return (
     <View style={styles.container}>
       <View style={styles.upperContainer}>
@@ -17,7 +21,12 @@ export default function SendMessage() {
         <View style={styles.inputContainer}>
           <TextInput style={styles.input} />
           <View style={styles.sticker}>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                dispatch(setModalType("chat"));
+                dispatch(setModalWindow(true));
+              }}
+            >
               <StickersIcon />
             </TouchableOpacity>
           </View>

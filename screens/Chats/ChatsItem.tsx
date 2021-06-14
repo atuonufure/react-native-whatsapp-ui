@@ -10,6 +10,7 @@ import {
   PhotoIcon,
 } from "../../components/icons";
 import { MockAvatar } from "../../components";
+
 type ChatsItemType = {
   name: string;
   lastMessage: string;

@@ -7,7 +7,7 @@ type HeaderType = {
   right?: string | JSX.Element;
   action?: () => void;
   editMode?: boolean;
-}
+};
 
 export default function Header({
   left,
@@ -20,14 +20,14 @@ export default function Header({
     <View style={styles.container}>
       {!editMode ? (
         <>
-          <TouchableOpacity style={styles.leftLink}>
-            {left ? <Text style={styles.left}>{left}</Text> : null}
+          <TouchableOpacity style={styles.leftLink} onPress={action}>
+            {left && <Text style={styles.left}>{left}</Text>}
           </TouchableOpacity>
           <View style={styles.header}>
             <Text style={styles.center}>{center}</Text>
           </View>
           <TouchableOpacity style={styles.rightLink} onPress={action}>
-            {right ? <Text style={styles.right}>{right}</Text> : null}
+            {right && <Text style={styles.right}>{right}</Text>}
           </TouchableOpacity>
         </>
       ) : (

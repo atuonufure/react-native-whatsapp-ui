@@ -1,34 +1,70 @@
 import * as React from "react";
-import { StyleSheet } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 
-import { Text, View } from "../../components/Themed";
+import { Header, MockAvatar } from "../../components";
+import CameraButtonIcon from "./icons/CameraButtonIcon";
+import EditButtonIcon from "./icons/EditButtonIcon";
 
 export default function Status() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Status</Text>
+    <View style={{ flex: 1 }}>
+      <Header left="Privacy" center="Status" />
       <View
-        style={styles.separator}
-        lightColor="#eee"
-        darkColor="rgba(255,255,255,0.1)"
-      />
+        style={{
+          backgroundColor: "#EFEFF4",
+          flexGrow: 1,
+        }}
+      >
+        <View
+          style={{
+            backgroundColor: "#FFFFFF",
+            height: 76,
+            alignItems: "center",
+            marginTop: 35,
+            marginBottom: 35,
+            flexDirection: "row",
+          }}
+        >
+          <MockAvatar avatar="../assets/avatars/StatusAvatar.png" size={58} />
+          <View style={{ flexGrow: 1 }}>
+            <View>
+              <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+                My Status
+              </Text>
+            </View>
+            <View>
+              <Text style={{ color: "#8E8E93" }}>Add to my status</Text>
+            </View>
+          </View>
+          <View
+            style={{
+              width: 88,
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginRight: 16,
+            }}
+          >
+            <TouchableOpacity>
+              <CameraButtonIcon />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <EditButtonIcon />
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View
+          style={{
+            backgroundColor: "#FFFFFF",
+            height: 43,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Text style={{ color: "#8E8E93", fontSize: 14 }}>
+            No recent updates to show right now.
+          </Text>
+        </View>
+      </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
-  },
-});

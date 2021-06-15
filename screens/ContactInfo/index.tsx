@@ -1,10 +1,10 @@
 import * as React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-export default function Calls() {
+export default function ContactInfo() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Calls</Text>
+      <Text style={styles.title}>ContactInfo</Text>
     </View>
   );
 }

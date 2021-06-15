@@ -1,12 +1,17 @@
 import * as React from "react";
-import { ScrollView, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity,
+  Text,
+  View,
+} from "react-native";
 import { SwipeRow } from "react-native-swipe-list-view";
 import { useDispatch } from "react-redux";
 
 import { setModalType, setModalWindow } from "../../redux/modalSlice";
 import { Header } from "../../components";
 import { ArchiveIcon, EditChatsIcon, MoreIcon } from "../../components/icons";
-import { Text, View } from "../../components/Themed";
 import SubMenu from "./SubMenu";
 import ChatsItem from "./ChatsItem";
 import { chats } from "../../data";

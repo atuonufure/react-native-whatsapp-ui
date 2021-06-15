@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, ScrollView, Image } from "react-native";
+import { View, ScrollView, Image } from "react-native";
 import ChatHeader from "./ChatHeader";
 import SendMessage from "./SendMessage";
 

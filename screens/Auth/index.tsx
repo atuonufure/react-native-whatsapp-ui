@@ -8,9 +8,9 @@ import {
 } from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
 
-import { Header } from "../components";
-import { RightArrowIcon } from "../components/icons";
-import { RootStackParamList } from "../types";
+import { Header } from "../../components";
+import { RightArrowIcon } from "../../components/icons";
+import { RootStackParamList } from "../../types";
 
 type AuthType = {
   navigation: StackNavigationProp<RootStackParamList, "Root">;

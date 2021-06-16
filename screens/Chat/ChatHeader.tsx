@@ -21,7 +21,10 @@ export default function ChatHeader({ name, avatar }: ChatHeaderType) {
         >
           <BackArrowIcon />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.userInfo}>
+        <TouchableOpacity
+          style={styles.userInfo}
+          onPress={() => navigation.navigate("ContactInfo")}
+        >
           <View>
             <MockAvatar avatar={avatar} size={36} />
           </View>

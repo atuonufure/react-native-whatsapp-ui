@@ -12,9 +12,9 @@ import NotFoundScreen from "../screens/NotFoundScreen";
 import { RootStackParamList } from "../types";
 import BottomTabNavigator from "./BottomTabNavigator";
 import LinkingConfiguration from "./LinkingConfiguration";
+import ContactInfo from "../screens/ContactInfo";
 import Auth from "../screens/Auth";
 import Chat from "../screens/Chat";
-import { ModalWrapper } from "../components";
 
 export default function Navigation({
   colorScheme,
@@ -44,6 +44,7 @@ function RootNavigator() {
         <Stack.Screen name="Auth" component={Auth} />
         <Stack.Screen name="Root" component={BottomTabNavigator} />
         <Stack.Screen name="Chat" component={Chat} />
+        <Stack.Screen name="ContactInfo" component={ContactInfo} />
         <Stack.Screen
           name="NotFound"
           component={NotFoundScreen}

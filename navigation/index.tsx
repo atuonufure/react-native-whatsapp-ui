@@ -15,6 +15,7 @@ import LinkingConfiguration from "./LinkingConfiguration";
 import ContactInfo from "../screens/ContactInfo";
 import Auth from "../screens/Auth";
 import Chat from "../screens/Chat";
+import { ModalWrapper } from "../components";
 
 export default function Navigation({
   colorScheme,

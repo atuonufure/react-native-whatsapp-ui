@@ -11,6 +11,7 @@ export default function InfoHeader() {
         height: 44,
         flexDirection: "row",
         alignItems: "center",
+        marginTop: 44,
       }}
     >
       <TouchableOpacity

@@ -1,8 +1,9 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import Write from "./icons/Write";
-import VideoCall from "./icons/VideoCall";
-import Call from "./icons/Call";
+
+import Write from "../icons/Write";
+import VideoCall from "../icons/VideoCall";
+import Call from "../icons/Call";
 
 export default function NameActions() {
   return (

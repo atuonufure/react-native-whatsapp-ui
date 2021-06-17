@@ -1,10 +1,11 @@
 import React from "react";
 import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
-import MediaIcon from "./icons/MediaIcon";
-import StarredIcon from "./icons/StarredIcon";
-import ChatSearchIcon from "./icons/ChatSearchIcon";
-import MuteIcon from "./icons/MuteIcon";
-import { RightArrowIcon } from "../../components/icons";
+
+import MediaIcon from "../icons/MediaIcon";
+import StarredIcon from "../icons/StarredIcon";
+import ChatSearchIcon from "../icons/ChatSearchIcon";
+import MuteIcon from "../icons/MuteIcon";
+import { RightArrowIcon } from "../../../components/icons";
 
 type LinkItemType = {
   icon: string;

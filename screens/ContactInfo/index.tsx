@@ -9,6 +9,7 @@ import EditContact from "./components/EditContact";
 
 export default function ContactInfo() {
   const [edit, setEdit] = React.useState<boolean>(false);
+  
   return (
     <>
       <InfoHeader setEdit={setEdit} edit={edit} />

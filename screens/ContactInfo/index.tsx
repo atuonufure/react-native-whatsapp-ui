@@ -9,34 +9,27 @@ import EditContact from "./components/EditContact";
 
 export default function ContactInfo() {
   const [edit, setEdit] = React.useState<boolean>(false);
-  
+
   return (
     <>
       <InfoHeader setEdit={setEdit} edit={edit} />
       {!edit ? (
         <ScrollView
           style={styles.container}
-          contentContainerStyle={{
-            alignItems: "center",
-          }}
+          contentContainerStyle={styles.scrollContainer}
         >
           <Image
             source={require("../../assets/images/ContactInfo.png")}
-            style={{ width: "100%" }}
+            style={styles.image}
           />
-          <View
-            style={{
-              width: "100%",
-              backgroundColor: "#FFFFFF",
-            }}
-          >
+          <View style={styles.info}>
             <NameActions />
             <Bio />
           </View>
           <View style={styles.linkContainer}>
             <LinkItem icon="Media" title="Media, Links, and Docs" value="12" />
             <LinkItem icon="Starred" title="Starred Messages" value="None" />
-            <LinkItem icon="ChatSearch" title="Chat Search" border="no" />
+            <LinkItem icon="ChatSearch" title="Chat Search" border="false" />
           </View>
           <View style={styles.linkContainer}>
             <LinkItem icon="Mute" title="Mute" value="No" />
@@ -61,5 +54,11 @@ const styles = StyleSheet.create({
     width: "100%",
     backgroundColor: "#FFFFFF",
     marginTop: 19,
+  },
+  image: { width: "100%" },
+  scrollContainer: { alignItems: "center" },
+  info: {
+    width: "100%",
+    backgroundColor: "#FFFFFF",
   },
 });

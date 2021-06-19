@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View, StyleSheet } from "react-native";
 
 import { Header, MockAvatar } from "../../components";
 import CameraButtonIcon from "./icons/CameraButtonIcon";
@@ -7,43 +7,16 @@ import EditButtonIcon from "./icons/EditButtonIcon";
 
 export default function Status() {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.flex}>
       <Header left="Privacy" center="Status" />
-      <View
-        style={{
-          backgroundColor: "#EFEFF4",
-          flexGrow: 1,
-        }}
-      >
-        <View
-          style={{
-            backgroundColor: "#FFFFFF",
-            height: 76,
-            alignItems: "center",
-            marginTop: 35,
-            marginBottom: 35,
-            flexDirection: "row",
-          }}
-        >
+      <View style={styles.container}>
+        <View style={styles.statusContainer}>
           <MockAvatar avatar="../assets/avatars/StatusAvatar.png" size={58} />
-          <View style={{ flexGrow: 1 }}>
-            <View>
-              <Text style={{ fontSize: 16, fontWeight: "bold" }}>
-                My Status
-              </Text>
-            </View>
-            <View>
-              <Text style={{ color: "#8E8E93" }}>Add to my status</Text>
-            </View>
+          <View style={styles.flexGrow}>
+            <Text style={styles.status}>My Status</Text>
+            <Text style={styles.addStatus}>Add to my status</Text>
           </View>
-          <View
-            style={{
-              width: 88,
-              flexDirection: "row",
-              justifyContent: "space-between",
-              marginRight: 16,
-            }}
-          >
+          <View style={styles.buttons}>
             <TouchableOpacity>
               <CameraButtonIcon />
             </TouchableOpacity>
@@ -52,15 +25,8 @@ export default function Status() {
             </TouchableOpacity>
           </View>
         </View>
-        <View
-          style={{
-            backgroundColor: "#FFFFFF",
-            height: 43,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Text style={{ color: "#8E8E93", fontSize: 14 }}>
+        <View style={styles.recentContainer}>
+          <Text style={styles.noRecent}>
             No recent updates to show right now.
           </Text>
         </View>
@@ -68,3 +34,35 @@ export default function Status() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  flex: { flex: 1 },
+  flexGrow: { flexGrow: 1 },
+  container: {
+    backgroundColor: "#EFEFF4",
+    flexGrow: 1,
+  },
+  statusContainer: {
+    backgroundColor: "#FFFFFF",
+    height: 76,
+    alignItems: "center",
+    marginTop: 35,
+    marginBottom: 35,
+    flexDirection: "row",
+  },
+  status: { fontSize: 16, fontWeight: "bold" },
+  addStatus: { color: "#8E8E93" },
+  buttons: {
+    width: 88,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginRight: 16,
+  },
+  recentContainer: {
+    backgroundColor: "#FFFFFF",
+    height: 43,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  noRecent: { color: "#8E8E93", fontSize: 14 },
+});

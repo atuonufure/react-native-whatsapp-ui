@@ -12,6 +12,7 @@ import { setModalType, setModalWindow } from "../../redux/modalSlice";
 
 export default function SendMessage() {
   const dispatch = useDispatch();
+
   return (
     <View style={styles.container}>
       <View style={styles.upperContainer}>

@@ -28,11 +28,13 @@ export default function ChatsItem({
   editMode,
   messageIcon,
 }: ChatsItemType) {
+  const navigation = useNavigation();
+
   const editedMessage =
     lastMessage.length > 24
       ? lastMessage.slice(0, 24).trim() + "..."
       : lastMessage;
-  const navigation = useNavigation();
+
   return (
     <View style={styles.subContainer}>
       <TouchableOpacity
@@ -52,21 +54,17 @@ export default function ChatsItem({
         <View style={styles.messagePart}>
           <View style={styles.upperMessagePart}>
             <Text style={styles.name}>{name}</Text>
-            <Text style={[styles.date, editMode && { marginRight: 16 }]}>
-              {date}
-            </Text>
+            <Text style={[styles.date, editMode && styles.mr16]}>{date}</Text>
           </View>
           <View style={styles.message}>
             {messageIcon && (
-              <View style={{ marginTop: 8 }}>
-                {messageIcon === "read" && (
-                  <ReadIcon style={{ marginRight: 2.5 }} />
-                )}
+              <View style={styles.mt8}>
+                {messageIcon === "read" && <ReadIcon style={styles.mr2half} />}
                 {messageIcon === "voicerecord" && (
-                  <VoiceRecordIcon style={{ marginRight: 5 }} />
+                  <VoiceRecordIcon style={styles.mr5} />
                 )}
                 {messageIcon === "photo" && (
-                  <PhotoIcon style={{ marginRight: 4.5 }} />
+                  <PhotoIcon style={styles.mr4half} />
                 )}
               </View>
             )}
@@ -134,4 +132,9 @@ const styles = StyleSheet.create({
     marginLeft: 17,
   },
   message: { flexDirection: "row", alignItems: "center" },
+  mr16: { marginRight: 16 },
+  mt8: { marginTop: 8 },
+  mr2half: { marginRight: 2.5 },
+  mr5: { marginRight: 5 },
+  mr4half: { marginRight: 4.5 },
 });

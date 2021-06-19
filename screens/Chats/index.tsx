@@ -6,26 +6,23 @@ import {
   Text,
   View,
 } from "react-native";
-import { SwipeRow } from "react-native-swipe-list-view";
 import { useDispatch } from "react-redux";
+import { SwipeRow } from "react-native-swipe-list-view";
 
 import { setModalType, setModalWindow } from "../../redux/modalSlice";
-import { Header } from "../../components";
 import { ArchiveIcon, EditChatsIcon, MoreIcon } from "../../components/icons";
+import { Header } from "../../components";
 import SubMenu from "./SubMenu";
 import ChatsItem from "./ChatsItem";
+
 import { chats } from "../../data";
 
 export default function Chats() {
   const [editMode, setEditMode] = React.useState(false);
   const dispatch = useDispatch();
+
   return (
-    <View
-      style={[
-        styles.containerMain,
-        !editMode && { backgroundColor: "#F6F6F6" },
-      ]}
-    >
+    <View style={[styles.containerMain, !editMode && styles.white]}>
       <Header
         left="Edit"
         center="Chats"
@@ -52,26 +49,15 @@ export default function Chats() {
                           dispatch(setModalType("chats"));
                           dispatch(setModalWindow(true));
                         }}
-                        style={[
-                          styles.subMenu,
-                          {
-                            backgroundColor: "#C6C6CC",
-                            marginTop: 9,
-                          },
-                        ]}
+                        style={[styles.subMenu, styles.swipeMore]}
                       >
-                        <View style={{ marginBottom: 13.5 }}>
+                        <View style={styles.moreIcon}>
                           <MoreIcon />
                         </View>
                         <Text style={[styles.backTextWhite]}>More</Text>
                       </TouchableOpacity>
                       <TouchableOpacity
-                        style={[
-                          styles.subMenu,
-                          {
-                            backgroundColor: "#3E70A7",
-                          },
-                        ]}
+                        style={[styles.subMenu, styles.swipeArchive]}
                       >
                         <ArchiveIcon />
                         <Text style={styles.backTextWhite}>Archive</Text>
@@ -141,4 +127,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingVertical: "100%",
   },
+  white: { backgroundColor: "#F6F6F6" },
+  swipeMore: {
+    backgroundColor: "#C6C6CC",
+    marginTop: 9,
+  },
+  swipeArchive: {
+    backgroundColor: "#3E70A7",
+  },
+  moreIcon: { marginBottom: 13.5 },
 });

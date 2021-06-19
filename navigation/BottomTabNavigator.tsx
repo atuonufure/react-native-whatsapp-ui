@@ -1,8 +1,6 @@
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import * as React from "react";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import Colors from "../constants/Colors";
-import useColorScheme from "../hooks/useColorScheme";
 import Calls from "../screens/Calls";
 import Camera from "../screens/Camera";
 import Chats from "../screens/Chats";
@@ -21,12 +19,10 @@ import { BottomTabParamList } from "../types";
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
-  const colorScheme = useColorScheme();
 
   return (
     <BottomTab.Navigator
       initialRouteName="Chats"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}
     >
       <BottomTab.Screen
         name="Status"

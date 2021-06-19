@@ -12,6 +12,7 @@ type ChatHeaderType = {
 
 export default function ChatHeader({ name, avatar }: ChatHeaderType) {
   const navigation = useNavigation();
+  
   return (
     <View style={styles.container}>
       <View style={styles.bottomContainer}>
@@ -34,7 +35,7 @@ export default function ChatHeader({ name, avatar }: ChatHeaderType) {
           </View>
         </TouchableOpacity>
         <View style={styles.callsContainer}>
-          <TouchableOpacity style={{ paddingRight: 25 }}>
+          <TouchableOpacity style={styles.pr25}>
             <VideoCallIcon />
           </TouchableOpacity>
           <TouchableOpacity>
@@ -54,4 +55,5 @@ const styles = StyleSheet.create({
   name: { fontWeight: "bold", fontSize: 16 },
   tapInfo: { fontSize: 12, color: "#8E8E93" },
   callsContainer: { width: 90, alignItems: "center", flexDirection: "row" },
+  pr25: { paddingRight: 25 },
 });

@@ -6,9 +6,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { setModalWindow } from "../redux/modalSlice";
 
 export default function ModalWrapper() {
-  let modalItems: Array<string> = [];
   const dispatch = useDispatch();
   const modalType = useSelector((state: any) => state.modal.modalType);
+
+  let modalItems: Array<string> = [];
+
   switch (modalType) {
     case "chats":
       modalItems = [
@@ -29,24 +31,20 @@ export default function ModalWrapper() {
       ];
       break;
   }
+
   return (
     <View style={styles.container}>
       <View style={styles.main}>
         {modalItems.map((el, index) => (
           <View
             key={`${el}${index}`}
-            style={
-              el != "Delete Chat" && {
-                borderBottomColor: "#C6C6C8",
-                borderBottomWidth: 1,
-              }
-            }
+            style={el !== "Delete Chat" && styles.border}
           >
             <TouchableOpacity style={styles.modailItem}>
               <Text
                 style={[
-                  { fontSize: 20 },
-                  { color: el != "Delete Chat" ? "#007AFF" : "#FF3B30" },
+                  styles.font20,
+                  el !== "Delete Chat" ? styles.blue : styles.red,
                 ]}
               >
                 {el}
@@ -58,9 +56,7 @@ export default function ModalWrapper() {
       <View style={styles.cancel}>
         <TouchableOpacity
           style={styles.cancelItem}
-          onPress={() => {
-            dispatch(setModalWindow(false));
-          }}
+          onPress={() => dispatch(setModalWindow(false))}
         >
           <Text style={styles.cancelText}>Cancel</Text>
         </TouchableOpacity>
@@ -104,4 +100,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   cancelText: { fontSize: 19, fontWeight: "bold", color: "#007AFF" },
+  border: {
+    borderBottomColor: "#C6C6C8",
+    borderBottomWidth: 1,
+  },
+  blue: {
+    color: "#007AFF",
+  },
+  red: {
+    color: "#FF3B30",
+  },
+  font20: { fontSize: 20 },
 });

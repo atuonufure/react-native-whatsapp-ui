@@ -17,9 +17,7 @@ type LinkItemType = {
 export default function LinkItem({ icon, title, value, border }: LinkItemType) {
   return (
     <>
-      <TouchableOpacity
-        style={{ flexDirection: "row", justifyContent: "space-between" }}
-      >
+      <TouchableOpacity style={styles.container}>
         <View
           style={{
             flexDirection: "row",
@@ -32,22 +30,12 @@ export default function LinkItem({ icon, title, value, border }: LinkItemType) {
           {icon === "Mute" && <MuteIcon style={styles.icon} />}
           <Text style={{ fontSize: 16 }}>{title}</Text>
         </View>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Text style={{ fontSize: 16 }}>{value}</Text>
-          <RightArrowIcon
-            style={{ marginVertical: 17.5, marginRight: 17, marginLeft: 12 }}
-          />
+        <View style={styles.link}>
+          <Text style={styles.linkText}>{value}</Text>
+          <RightArrowIcon style={styles.arrow} />
         </View>
       </TouchableOpacity>
-      {border !== "no" && (
-        <View
-          style={{
-            borderBottomWidth: 0.33,
-            marginLeft: 59,
-            borderBottomColor: "#3c3c432f",
-          }}
-        />
-      )}
+      {border !== "false" && <View style={styles.border} />}
     </>
   );
 }
@@ -57,5 +45,14 @@ const styles = StyleSheet.create({
     marginTop: 8,
     marginBottom: 10,
     marginHorizontal: 15,
+  },
+  container: { flexDirection: "row", justifyContent: "space-between" },
+  link: { flexDirection: "row", alignItems: "center" },
+  linkText: { fontSize: 16 },
+  arrow: { marginVertical: 17.5, marginRight: 17, marginLeft: 12 },
+  border: {
+    borderBottomWidth: 0.33,
+    marginLeft: 59,
+    borderBottomColor: "#3c3c432f",
   },
 });

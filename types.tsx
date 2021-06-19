@@ -1,3 +1,5 @@
+import { StackNavigationProp } from "@react-navigation/stack";
+
 export type RootStackParamList = {
   Root: undefined;
   NotFound: undefined;
@@ -12,4 +14,8 @@ export type BottomTabParamList = {
   Chats: undefined;
   Settings: undefined;
   Status: undefined;
+};
+
+export type navigationType = {
+  navigation: StackNavigationProp<RootStackParamList>;
 };

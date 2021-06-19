@@ -20,12 +20,10 @@ export default function SubMenu({ editMode }: SubMenuType) {
       ) : (
         <>
           <View>
-            <Text style={[styles.text, { color: "#C7C7CC" }]}>
-              Broadcast Lists
-            </Text>
+            <Text style={[styles.text, styles.gray]}>Broadcast Lists</Text>
           </View>
           <View>
-            <Text style={[styles.text, { color: "#C7C7CC" }]}>New group</Text>
+            <Text style={[styles.text, styles.gray]}>New group</Text>
           </View>
         </>
       )}
@@ -46,4 +44,5 @@ const styles = StyleSheet.create({
     fontSize: 17,
     paddingHorizontal: 16,
   },
+  gray: { color: "#C7C7CC" },
 });

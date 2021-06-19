@@ -1,5 +1,6 @@
 import React from "react";
-import { View, ScrollView, Image } from "react-native";
+import { View, ScrollView, Image, StyleSheet } from "react-native";
+
 import ChatHeader from "./ChatHeader";
 import SendMessage from "./SendMessage";
 
@@ -9,12 +10,13 @@ type routeType = {
 
 export default function Chat({ route }: routeType) {
   const { name, avatar } = route.params;
+  
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.container}>
       <ChatHeader name={name} avatar={avatar} />
       <ScrollView scrollEnabled={false}>
         <Image
-          style={{ width: "100%" }}
+          style={styles.image}
           source={require("../../assets/images/chatBackground.png")}
         />
       </ScrollView>
@@ -22,3 +24,8 @@ export default function Chat({ route }: routeType) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1 },
+  image: { width: "100%" },
+});

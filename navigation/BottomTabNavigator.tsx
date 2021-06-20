@@ -19,11 +19,8 @@ import { BottomTabParamList } from "../types";
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
-
   return (
-    <BottomTab.Navigator
-      initialRouteName="Chats"
-    >
+    <BottomTab.Navigator initialRouteName="Chats">
       <BottomTab.Screen
         name="Status"
         component={Status}
@@ -42,6 +39,7 @@ export default function BottomTabNavigator() {
         name="Camera"
         component={Camera}
         options={{
+          tabBarVisible: false,
           tabBarIcon: ({ color }) => <CameraIcon color={color} />,
         }}
       />

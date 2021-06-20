@@ -1,22 +1,26 @@
 import * as React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
 
 export default function Camera() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Camera</Text>
+      <View style={styles.bar} />
+      <View style={styles.cameraView}>
+        <Image
+          style={styles.camera}
+          source={require("../../assets/camera/cameraView.png")}
+        />
+      </View>
+      <View style={styles.bar} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
   },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
+  bar: { height: 73, width: "100%", backgroundColor: "#000000" },
+  cameraView: { width: "100%" },
+  camera: { width: "100%" },
 });

@@ -1,9 +1,9 @@
-import React from "react";
-import { StyleSheet } from "react-native";
-import { View, Text, TouchableOpacity } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { setModalWindow } from "../redux/modalSlice";
+import { setModalWindow } from '../redux/modalSlice';
 
 export default function ModalWrapper() {
   const dispatch = useDispatch();
@@ -12,22 +12,22 @@ export default function ModalWrapper() {
   let modalItems: Array<string> = [];
 
   switch (modalType) {
-    case "chats":
+    case 'chats':
       modalItems = [
-        "Mute",
-        "Contact Info",
-        "Export Chat",
-        "Clear Chat",
-        "Delete Chat",
+        'Mute',
+        'Contact Info',
+        'Export Chat',
+        'Clear Chat',
+        'Delete Chat',
       ];
       break;
-    case "chat":
+    case 'chat':
       modalItems = [
-        "Camera",
-        "Photo & Video Library",
-        "Document",
-        "Location",
-        "Contact",
+        'Camera',
+        'Photo & Video Library',
+        'Document',
+        'Location',
+        'Contact',
       ];
       break;
   }
@@ -38,15 +38,13 @@ export default function ModalWrapper() {
         {modalItems.map((el, index) => (
           <View
             key={`${el}${index}`}
-            style={el !== "Delete Chat" && styles.border}
-          >
+            style={el !== 'Delete Chat' && styles.border}>
             <TouchableOpacity style={styles.modailItem}>
               <Text
                 style={[
                   styles.font20,
-                  el !== "Delete Chat" ? styles.blue : styles.red,
-                ]}
-              >
+                  el !== 'Delete Chat' ? styles.blue : styles.red,
+                ]}>
                 {el}
               </Text>
             </TouchableOpacity>
@@ -56,8 +54,7 @@ export default function ModalWrapper() {
       <View style={styles.cancel}>
         <TouchableOpacity
           style={styles.cancelItem}
-          onPress={() => dispatch(setModalWindow(false))}
-        >
+          onPress={() => dispatch(setModalWindow(false))}>
           <Text style={styles.cancelText}>Cancel</Text>
         </TouchableOpacity>
       </View>
@@ -67,48 +64,48 @@ export default function ModalWrapper() {
 
 const styles = StyleSheet.create({
   container: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
-    backgroundColor: "#00000060",
-    justifyContent: "flex-end",
-    alignItems: "center",
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#00000060',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
   },
   main: {
-    width: "90%",
-    backgroundColor: "#ECECED",
+    width: '90%',
+    backgroundColor: '#ECECED',
     borderRadius: 15,
   },
   modailItem: {
     height: 56,
-    width: "100%",
-    justifyContent: "center",
-    alignItems: "center",
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   cancel: {
-    width: "90%",
+    width: '90%',
     height: 57,
-    backgroundColor: "#ffffff",
+    backgroundColor: '#ffffff',
     borderRadius: 15,
     marginBottom: 44,
     marginTop: 7.5,
   },
   cancelItem: {
-    height: "100%",
-    width: "100%",
-    alignItems: "center",
-    justifyContent: "center",
+    height: '100%',
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  cancelText: { fontSize: 19, fontWeight: "bold", color: "#007AFF" },
+  cancelText: { fontSize: 19, fontWeight: 'bold', color: '#007AFF' },
   border: {
-    borderBottomColor: "#C6C6C8",
+    borderBottomColor: '#C6C6C8',
     borderBottomWidth: 1,
   },
   blue: {
-    color: "#007AFF",
+    color: '#007AFF',
   },
   red: {
-    color: "#FF3B30",
+    color: '#FF3B30',
   },
   font20: { fontSize: 20 },
 });

@@ -1,14 +1,14 @@
-import React from "react";
-import { View, TextInput, TouchableOpacity, StyleSheet } from "react-native";
-import { useDispatch } from "react-redux";
+import React from 'react';
+import { View, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { useDispatch } from 'react-redux';
 
 import {
   AddIcon,
   StickersIcon,
   CameraIcon,
   RecordAudioIcon,
-} from "../../components/icons";
-import { setModalType, setModalWindow } from "../../redux/modalSlice";
+} from '../../components/icons';
+import { setModalType, setModalWindow } from '../../redux/modalSlice';
 
 export default function SendMessage() {
   const dispatch = useDispatch();
@@ -24,16 +24,15 @@ export default function SendMessage() {
           <View style={styles.sticker}>
             <TouchableOpacity
               onPress={() => {
-                dispatch(setModalType("chat"));
+                dispatch(setModalType('chat'));
                 dispatch(setModalWindow(true));
-              }}
-            >
+              }}>
               <StickersIcon />
             </TouchableOpacity>
           </View>
         </View>
         <TouchableOpacity>
-          <CameraIcon color="#007AFF" />
+          <CameraIcon color='#007AFF' />
         </TouchableOpacity>
         <TouchableOpacity>
           <RecordAudioIcon />
@@ -48,23 +47,23 @@ const styles = StyleSheet.create({
     height: 32,
     width: 228,
     borderWidth: 1,
-    borderColor: "#8E8E93",
-    backgroundColor: "#FFFFFF",
+    borderColor: '#8E8E93',
+    backgroundColor: '#FFFFFF',
     fontSize: 16,
     borderRadius: 16,
     paddingHorizontal: 10,
   },
-  container: { backgroundColor: "#F6F6F6", height: 46 },
-  sticker: { position: "absolute", paddingRight: 7.5 },
+  container: { backgroundColor: '#F6F6F6', height: 46 },
+  sticker: { position: 'absolute', paddingRight: 7.5 },
   inputContainer: {
-    flexDirection: "row",
-    justifyContent: "flex-end",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
   },
   upperContainer: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
     height: 46,
   },
 });

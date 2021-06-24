@@ -1,5 +1,5 @@
-import * as React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import * as React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function Calls() {
   return (
@@ -12,11 +12,11 @@ export default function Calls() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   title: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
 });

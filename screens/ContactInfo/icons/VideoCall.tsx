@@ -1,27 +1,26 @@
-import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import * as React from 'react';
+import Svg, { SvgProps, Path } from 'react-native-svg';
 
 function VideoCall(props: SvgProps) {
   return (
     <Svg
       width={36}
       height={36}
-      viewBox="0 0 36 36"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
+      viewBox='0 0 36 36'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+      {...props}>
       <Path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M18 36c9.941 0 18-8.059 18-18S27.941 0 18 0 0 8.059 0 18s8.059 18 18 18z"
-        fill="#EDEDFF"
+        fillRule='evenodd'
+        clipRule='evenodd'
+        d='M18 36c9.941 0 18-8.059 18-18S27.941 0 18 0 0 8.059 0 18s8.059 18 18 18z'
+        fill='#EDEDFF'
       />
       <Path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M21 12.25a2 2 0 012 2v8a2 2 0 01-2 2H11a2 2 0 01-2-2v-8a2 2 0 012-2h10zm8 1v10l-5-3v-4l5-3z"
-        fill="#007AFF"
+        fillRule='evenodd'
+        clipRule='evenodd'
+        d='M21 12.25a2 2 0 012 2v8a2 2 0 01-2 2H11a2 2 0 01-2-2v-8a2 2 0 012-2h10zm8 1v10l-5-3v-4l5-3z'
+        fill='#007AFF'
       />
     </Svg>
   );

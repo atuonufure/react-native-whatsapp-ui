@@ -1,10 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 export const modalSlice = createSlice({
-  name: "modal",
+  name: 'modal',
   initialState: {
     showModal: false,
-    modalType: "default",
+    modalType: 'default',
   },
   reducers: {
     setModalType: (state, action) => {

@@ -1,5 +1,5 @@
-import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 type HeaderType = {
   left?: string;
@@ -45,43 +45,43 @@ export default function Header({
 
 const styles = StyleSheet.create({
   container: {
-    display: "flex",
-    alignItems: "center",
-    flexDirection: "row",
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'row',
     marginTop: 44,
     height: 44,
   },
   left: {
-    alignSelf: "flex-start",
+    alignSelf: 'flex-start',
     paddingLeft: 12,
-    color: "#007AFF",
+    color: '#007AFF',
     fontSize: 17,
   },
   right: {
-    alignSelf: "flex-end",
-    fontWeight: "bold",
-    color: "#D1D1D6",
+    alignSelf: 'flex-end',
+    fontWeight: 'bold',
+    color: '#D1D1D6',
     paddingRight: 16,
     fontSize: 17,
   },
   center: {
-    alignSelf: "center",
-    fontWeight: "bold",
+    alignSelf: 'center',
+    fontWeight: 'bold',
     fontSize: 17,
   },
   leftLink: {
-    flexBasis: "23%",
+    flexBasis: '23%',
   },
   rightLink: {
-    flexBasis: "23%",
+    flexBasis: '23%',
   },
   header: {
-    flexBasis: "54%",
+    flexBasis: '54%',
   },
   done: {
-    color: "#007AFF",
+    color: '#007AFF',
     fontSize: 17,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginLeft: 16,
   },
 });

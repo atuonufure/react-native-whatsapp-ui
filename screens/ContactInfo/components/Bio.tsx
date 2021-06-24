@@ -1,5 +1,5 @@
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
 export default function Bio() {
   return (
@@ -15,9 +15,9 @@ export default function Bio() {
 const styles = StyleSheet.create({
   container: {
     height: 60,
-    justifyContent: "center",
+    justifyContent: 'center',
     paddingLeft: 15,
   },
   description: { fontSize: 14, marginVertical: 3.5 },
-  date: { color: "#8E8E93", fontSize: 12, marginVertical: 3.5 },
+  date: { color: '#8E8E93', fontSize: 12, marginVertical: 3.5 },
 });

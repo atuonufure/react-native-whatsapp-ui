@@ -1,12 +1,12 @@
-import * as React from "react";
-import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import * as React from 'react';
+import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-import Cancel from "./icons/Cancel";
-import Light from "./icons/Light";
-import Gallery from "./icons/Gallery";
-import TakePhoto from "./icons/TakePhoto";
-import ChangeCamera from "./icons/ChangeCamera";
+import Cancel from './icons/Cancel';
+import Light from './icons/Light';
+import Gallery from './icons/Gallery';
+import TakePhoto from './icons/TakePhoto';
+import ChangeCamera from './icons/ChangeCamera';
 
 export default function Camera() {
   const navigation = useNavigation();
@@ -14,7 +14,7 @@ export default function Camera() {
   return (
     <View style={styles.container}>
       <View style={[styles.bar, styles.topBar]}>
-        <TouchableOpacity onPress={() => navigation.navigate("Chats")}>
+        <TouchableOpacity onPress={() => navigation.navigate('Chats')}>
           <Cancel style={styles.cancel} />
         </TouchableOpacity>
         <TouchableOpacity>
@@ -24,7 +24,7 @@ export default function Camera() {
       <View style={styles.cameraView}>
         <Image
           style={styles.camera}
-          source={require("../../assets/camera/cameraView.png")}
+          source={require('../../assets/camera/cameraView.png')}
         />
       </View>
       <View style={styles.bar}>
@@ -41,12 +41,12 @@ export default function Camera() {
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: "space-between",
+    justifyContent: 'space-between',
   },
-  bar: { height: 73, width: "100%", backgroundColor: "#000000" },
+  bar: { height: 73, width: '100%', backgroundColor: '#000000' },
   topBar: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     paddingTop: 35,
   },
   cancel: {
@@ -55,17 +55,17 @@ const styles = StyleSheet.create({
   light: {
     marginRight: 11,
   },
-  cameraView: { width: "100%" },
-  camera: { width: "100%" },
+  cameraView: { width: '100%' },
+  camera: { width: '100%' },
   cameraButtons: {
-    position: "absolute",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    width: "100%",
+    position: 'absolute',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
     marginTop: -77,
-    alignItems: "center",
+    alignItems: 'center',
   },
   gallery: { marginLeft: 11.75 },
   changeCamera: { marginRight: 10.25 },
-  holdForVideo: { color: "#FFFFFF", textAlign: "center" },
+  holdForVideo: { color: '#FFFFFF', textAlign: 'center' },
 });

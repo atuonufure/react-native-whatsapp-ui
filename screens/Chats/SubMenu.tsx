@@ -1,5 +1,5 @@
-import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 type SubMenuType = {
   editMode: boolean;
@@ -34,15 +34,15 @@ export default function SubMenu({ editMode }: SubMenuType) {
 const styles = StyleSheet.create({
   container: {
     height: 44,
-    backgroundColor: "#FFFFFF",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    backgroundColor: '#FFFFFF',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   text: {
-    color: "#007AFF",
+    color: '#007AFF',
     fontSize: 17,
     paddingHorizontal: 16,
   },
-  gray: { color: "#C7C7CC" },
+  gray: { color: '#C7C7CC' },
 });

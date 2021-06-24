@@ -1,6 +1,6 @@
-import React from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import React from 'react';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import {
   ReadIcon,
@@ -8,8 +8,8 @@ import {
   SelectIcon,
   VoiceRecordIcon,
   PhotoIcon,
-} from "../../components/icons";
-import { MockAvatar } from "../../components";
+} from '../../components/icons';
+import { MockAvatar } from '../../components';
 
 type ChatsItemType = {
   name: string;
@@ -32,7 +32,7 @@ export default function ChatsItem({
 
   const editedMessage =
     lastMessage.length > 24
-      ? lastMessage.slice(0, 24).trim() + "..."
+      ? lastMessage.slice(0, 24).trim() + '...'
       : lastMessage;
 
   return (
@@ -40,9 +40,8 @@ export default function ChatsItem({
       <TouchableOpacity
         style={styles.container}
         onPress={() =>
-          !editMode && navigation.navigate("Chat", { name, avatar })
-        }
-      >
+          !editMode && navigation.navigate('Chat', { name, avatar })
+        }>
         {editMode && (
           <View style={styles.select}>
             <SelectIcon />
@@ -59,11 +58,11 @@ export default function ChatsItem({
           <View style={styles.message}>
             {messageIcon && (
               <View style={styles.mt8}>
-                {messageIcon === "read" && <ReadIcon style={styles.mr2half} />}
-                {messageIcon === "voicerecord" && (
+                {messageIcon === 'read' && <ReadIcon style={styles.mr2half} />}
+                {messageIcon === 'voicerecord' && (
                   <VoiceRecordIcon style={styles.mr5} />
                 )}
-                {messageIcon === "photo" && (
+                {messageIcon === 'photo' && (
                   <PhotoIcon style={styles.mr4half} />
                 )}
               </View>
@@ -82,56 +81,56 @@ export default function ChatsItem({
 }
 
 const styles = StyleSheet.create({
-  subContainer: { flex: 1, backgroundColor: "#FFFFFF" },
+  subContainer: { flex: 1, backgroundColor: '#FFFFFF' },
   container: {
-    backgroundColor: "#FFFFFF",
-    flexDirection: "row",
+    backgroundColor: '#FFFFFF',
+    flexDirection: 'row',
     height: 74,
   },
   avatarPart: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   arrowPart: {
     width: 35,
     paddingLeft: 10,
     marginRight: 8,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     borderBottomWidth: 0.33,
-    borderBottomColor: "rgba(60, 60, 67, 0.29)",
+    borderBottomColor: 'rgba(60, 60, 67, 0.29)',
   },
   messagePart: {
     flexGrow: 1,
-    flexDirection: "column",
+    flexDirection: 'column',
     borderBottomWidth: 0.33,
-    borderBottomColor: "rgba(60, 60, 67, 0.29)",
+    borderBottomColor: 'rgba(60, 60, 67, 0.29)',
   },
   upperMessagePart: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   date: {
-    color: "#8E8E93",
+    color: '#8E8E93',
     paddingTop: 10,
     fontSize: 14,
   },
   name: {
     paddingTop: 8,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     fontSize: 16,
   },
   messageText: {
     fontSize: 14,
     paddingTop: 6,
-    color: "#8E8E93",
+    color: '#8E8E93',
     width: 200,
   },
   select: {
-    justifyContent: "center",
+    justifyContent: 'center',
     marginLeft: 17,
   },
-  message: { flexDirection: "row", alignItems: "center" },
+  message: { flexDirection: 'row', alignItems: 'center' },
   mr16: { marginRight: 16 },
   mt8: { marginTop: 8 },
   mr2half: { marginRight: 2.5 },

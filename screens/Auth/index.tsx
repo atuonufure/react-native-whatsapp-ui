@@ -1,24 +1,24 @@
-import React from "react";
+import React from 'react';
 import {
   Text,
   TextInput,
   View,
   StyleSheet,
   TouchableOpacity,
-} from "react-native";
+} from 'react-native';
 
-import { Header } from "../../components";
-import { RightArrowIcon } from "../../components/icons";
+import { Header } from '../../components';
+import { RightArrowIcon } from '../../components/icons';
 
-import { navigationType } from "../../types";
+import { navigationType } from '../../types';
 
 export default function Auth({ navigation }: navigationType) {
   return (
     <View style={styles.container}>
       <Header
-        center="Phone number"
-        right="Done"
-        action={() => navigation.navigate("Root")}
+        center='Phone number'
+        right='Done'
+        action={() => navigation.navigate('Root')}
       />
       <View style={styles.background}>
         <View style={styles.pleaseConfirm}>
@@ -34,13 +34,12 @@ export default function Auth({ navigation }: navigationType) {
             </View>
           </TouchableOpacity>
           <View
-            style={[styles.codeBorder, styles.inputContainer, styles.border]}
-          >
+            style={[styles.codeBorder, styles.inputContainer, styles.border]}>
             <Text style={[styles.countryCode, styles.border]}>+1</Text>
             <TextInput
-              placeholder="phone number"
-              placeholderTextColor="#C7C7CC"
-              keyboardType="numeric"
+              placeholder='phone number'
+              placeholderTextColor='#C7C7CC'
+              keyboardType='numeric'
               style={styles.numberInput}
             />
           </View>
@@ -52,36 +51,36 @@ export default function Auth({ navigation }: navigationType) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#F6F6F6",
+    backgroundColor: '#F6F6F6',
   },
   pleaseConfirm: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     height: 78,
   },
   inputContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     height: 45,
   },
   border: {
-    borderColor: "rgba(60,60,67, 0.29)",
+    borderColor: 'rgba(60,60,67, 0.29)',
   },
   country: {
-    flexBasis: "70%",
-    color: "#007AFF",
+    flexBasis: '70%',
+    color: '#007AFF',
     fontSize: 17,
     paddingVertical: 12,
     paddingLeft: 16,
   },
   rightArrow: {
-    flexBasis: "30%",
-    alignItems: "flex-end",
+    flexBasis: '30%',
+    alignItems: 'flex-end',
     paddingVertical: 16,
     paddingHorizontal: 17,
   },
   countryCode: {
     fontSize: 27,
-    alignSelf: "center",
+    alignSelf: 'center',
     paddingLeft: 29,
     paddingTop: 5,
     paddingBottom: 5,
@@ -89,11 +88,11 @@ const styles = StyleSheet.create({
     borderRightWidth: 0.2,
   },
   background: {
-    backgroundColor: "#FFFFFF",
-    height: "100%",
+    backgroundColor: '#FFFFFF',
+    height: '100%',
   },
   confirmText: {
-    textAlign: "center",
+    textAlign: 'center',
     fontSize: 15,
   },
   countryBorder: {

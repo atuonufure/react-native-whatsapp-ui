@@ -1,5 +1,5 @@
-import React from "react";
-import { Image, View, StyleSheet } from "react-native";
+import React from 'react';
+import { Image, View, StyleSheet } from 'react-native';
 
 type MockAvatarType = {
   avatar?: string;
@@ -8,10 +8,10 @@ type MockAvatarType = {
 
 export default function MockAvatar({ avatar, size }: MockAvatarType) {
   switch (avatar) {
-    case "../assets/avatars/MartinRandolph.png":
+    case '../assets/avatars/MartinRandolph.png':
       return (
         <Image
-          source={require("../assets/avatars/MartinRandolph.png")}
+          source={require('../assets/avatars/MartinRandolph.png')}
           style={[
             styles.avatar,
             { width: size, height: size },
@@ -19,10 +19,10 @@ export default function MockAvatar({ avatar, size }: MockAvatarType) {
           ]}
         />
       );
-    case "../assets/avatars/AndrewParker.png":
+    case '../assets/avatars/AndrewParker.png':
       return (
         <Image
-          source={require("../assets/avatars/AndrewParker.png")}
+          source={require('../assets/avatars/AndrewParker.png')}
           style={[
             styles.avatar,
             { width: size, height: size },
@@ -30,10 +30,10 @@ export default function MockAvatar({ avatar, size }: MockAvatarType) {
           ]}
         />
       );
-    case "../assets/avatars/KarenCastillo.png":
+    case '../assets/avatars/KarenCastillo.png':
       return (
         <Image
-          source={require("../assets/avatars/KarenCastillo.png")}
+          source={require('../assets/avatars/KarenCastillo.png')}
           style={[
             styles.avatar,
             { width: size, height: size },
@@ -41,10 +41,10 @@ export default function MockAvatar({ avatar, size }: MockAvatarType) {
           ]}
         />
       );
-    case "../assets/avatars/MaximillianJacobson.png":
+    case '../assets/avatars/MaximillianJacobson.png':
       return (
         <Image
-          source={require("../assets/avatars/MaximillianJacobson.png")}
+          source={require('../assets/avatars/MaximillianJacobson.png')}
           style={[
             styles.avatar,
             { width: size, height: size },
@@ -52,10 +52,10 @@ export default function MockAvatar({ avatar, size }: MockAvatarType) {
           ]}
         />
       );
-    case "../assets/avatars/MarthaCraig.png":
+    case '../assets/avatars/MarthaCraig.png':
       return (
         <Image
-          source={require("../assets/avatars/MarthaCraig.png")}
+          source={require('../assets/avatars/MarthaCraig.png')}
           style={[
             styles.avatar,
             { width: size, height: size },
@@ -63,10 +63,10 @@ export default function MockAvatar({ avatar, size }: MockAvatarType) {
           ]}
         />
       );
-    case "../assets/avatars/TabithaPotter.png":
+    case '../assets/avatars/TabithaPotter.png':
       return (
         <Image
-          source={require("../assets/avatars/TabithaPotter.png")}
+          source={require('../assets/avatars/TabithaPotter.png')}
           style={[
             styles.avatar,
             { width: size, height: size },
@@ -74,10 +74,10 @@ export default function MockAvatar({ avatar, size }: MockAvatarType) {
           ]}
         />
       );
-    case "../assets/avatars/MaisyHumphrey.png":
+    case '../assets/avatars/MaisyHumphrey.png':
       return (
         <Image
-          source={require("../assets/avatars/MaisyHumphrey.png")}
+          source={require('../assets/avatars/MaisyHumphrey.png')}
           style={[
             styles.avatar,
             { width: size, height: size },
@@ -85,10 +85,10 @@ export default function MockAvatar({ avatar, size }: MockAvatarType) {
           ]}
         />
       );
-    case "../assets/avatars/KieronDotson.png":
+    case '../assets/avatars/KieronDotson.png':
       return (
         <Image
-          source={require("../assets/avatars/KieronDotson.png")}
+          source={require('../assets/avatars/KieronDotson.png')}
           style={[
             styles.avatar,
             { width: size, height: size },
@@ -96,10 +96,10 @@ export default function MockAvatar({ avatar, size }: MockAvatarType) {
           ]}
         />
       );
-    case "../assets/avatars/StatusAvatar.png":
+    case '../assets/avatars/StatusAvatar.png':
       return (
         <Image
-          source={require("../assets/avatars/StatusAvatar.png")}
+          source={require('../assets/avatars/StatusAvatar.png')}
           style={[
             styles.avatar,
             { width: size, height: size },

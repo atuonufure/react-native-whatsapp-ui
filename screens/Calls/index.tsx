@@ -1,10 +1,24 @@
 import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
+
+import CallItem from './components/CallItem';
+import Tabs from './components/Tabs';
+
+import CallPlusIcon from './icons/CallPlusIcon';
 
 export default function Calls() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Calls</Text>
+      <View>
+        <View style={styles.tabsContainer}>
+          <Text style={{ color: '#007AFF', fontSize: 17 }}>Edit</Text>
+          <Tabs />
+          <CallPlusIcon />
+        </View>
+        <ScrollView>
+          <CallItem />
+        </ScrollView>
+      </View>
     </View>
   );
 }
@@ -12,11 +26,16 @@ export default function Calls() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: 44,
     alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#F6F6F6',
   },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
+  tabsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    height: 44,
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    width: Dimensions.get('window').width,
   },
 });

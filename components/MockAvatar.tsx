@@ -8,6 +8,8 @@ type MockAvatarType = {
 
 export default function MockAvatar({ avatar, size }: MockAvatarType) {
   switch (avatar) {
+    /* Chat */
+
     case '../assets/avatars/MartinRandolph.png':
       return (
         <Image
@@ -107,6 +109,59 @@ export default function MockAvatar({ avatar, size }: MockAvatarType) {
           ]}
         />
       );
+
+    /* Calls */
+
+    case '../assets/calls/MartinRandolph.png':
+      return (
+        <Image
+          source={require('../assets/calls/MartinRandolph.png')}
+          style={[styles.callAvatar, { width: size, height: size }]}
+        />
+      );
+    case '../assets/calls/KarenCastillo.png':
+      return (
+        <Image
+          source={require('../assets/calls/KarenCastillo.png')}
+          style={[styles.callAvatar, { width: size, height: size }]}
+        />
+      );
+    case '../assets/calls/KieronDotson.png':
+      return (
+        <Image
+          source={require('../assets/calls/KieronDotson.png')}
+          style={[styles.callAvatar, { width: size, height: size }]}
+        />
+      );
+    case '../assets/calls/ZackJohn.png':
+      return (
+        <Image
+          source={require('../assets/calls/ZackJohn.png')}
+          style={[styles.callAvatar, { width: size, height: size }]}
+        />
+      );
+    case '../assets/calls/JamieFranco.png':
+      return (
+        <Image
+          source={require('../assets/calls/JamieFranco.png')}
+          style={[styles.callAvatar, { width: size, height: size }]}
+        />
+      );
+    case '../assets/calls/MarthaCraig.png':
+      return (
+        <Image
+          source={require('../assets/calls/MarthaCraig.png')}
+          style={[styles.callAvatar, { width: size, height: size }]}
+        />
+      );
+    case '../assets/calls/MaisyHumphrey.png':
+      return (
+        <Image
+          source={require('../assets/calls/MaisyHumphrey.png')}
+          style={[styles.callAvatar, { width: size, height: size }]}
+        />
+      );
+
     default:
       return <View style={[styles.avatar, { width: size, height: size }]} />;
   }
@@ -123,5 +178,11 @@ const styles = StyleSheet.create({
   statusAvatar: {
     marginLeft: 13,
     marginRight: 9,
+  },
+  callAvatar: {
+    backgroundColor: 'lightgray',
+    borderRadius: 20,
+    marginLeft: 16,
+    marginVertical: 8,
   },
 });

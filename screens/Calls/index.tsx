@@ -6,7 +6,23 @@ import Tabs from './components/Tabs';
 
 import CallPlusIcon from './icons/CallPlusIcon';
 
+import callsService from '../../service/calls.service';
+
+export type CallType = {
+  id: number;
+  name: string;
+  avatar: string;
+  type: string;
+  date: string;
+};
+
 export default function Calls() {
+  const [calls, setCalls] = React.useState<[CallType]>();
+
+  React.useEffect(() => {
+    callsService.getCalls().then((data: any) => setCalls(data));
+  }, []);
+
   return (
     <View style={styles.container}>
       <View>
@@ -16,7 +32,9 @@ export default function Calls() {
           <CallPlusIcon />
         </View>
         <ScrollView>
-          <CallItem />
+          {calls &&
+            calls.length > 0 &&
+            calls.map((el: CallType) => <CallItem key={el.id} call={el} />)}
         </ScrollView>
       </View>
     </View>

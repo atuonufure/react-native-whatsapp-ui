@@ -11,7 +11,9 @@ export default function Status() {
       <Header left='Privacy' center='Status' />
       <View style={styles.container}>
         <View style={styles.statusContainer}>
-          <MockAvatar avatar='../assets/avatars/StatusAvatar.png' size={58} />
+          <View style={styles.statusAvatar}>
+            <MockAvatar avatar='../assets/avatars/StatusAvatar.png' size={58} />
+          </View>
           <View style={styles.flexGrow}>
             <Text style={styles.status}>My Status</Text>
             <Text style={styles.addStatus}>Add to my status</Text>
@@ -65,4 +67,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   noRecent: { color: '#8E8E93', fontSize: 14 },
+  statusAvatar: { marginLeft: 13, marginRight: 9 },
 });

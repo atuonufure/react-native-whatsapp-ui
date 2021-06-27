@@ -102,11 +102,7 @@ export default function MockAvatar({ avatar, size }: MockAvatarType) {
       return (
         <Image
           source={require('../assets/avatars/StatusAvatar.png')}
-          style={[
-            styles.avatar,
-            { width: size, height: size },
-            styles.statusAvatar,
-          ]}
+          style={[styles.avatar, { width: size, height: size }]}
         />
       );
 

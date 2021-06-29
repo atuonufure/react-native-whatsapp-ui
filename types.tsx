@@ -6,6 +6,8 @@ export type RootStackParamList = {
   Auth: undefined;
   Chat: undefined;
   ContactInfo: undefined;
+  TypeStatus: undefined;
+  Status: undefined;
 };
 
 export type BottomTabParamList = {

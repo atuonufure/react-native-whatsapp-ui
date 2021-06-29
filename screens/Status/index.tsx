@@ -2,17 +2,20 @@ import * as React from 'react';
 import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
 
 import { Header, MockAvatar } from '../../components';
+
 import CameraButtonIcon from './icons/CameraButtonIcon';
 import EditButtonIcon from './icons/EditButtonIcon';
 
-export default function Status() {
+import { navigationType } from '../../types';
+
+export default function Status({ navigation }: navigationType) {
   return (
     <View style={styles.flex}>
-      <Header left='Privacy' center='Status' />
+      <Header left="Privacy" center="Status" />
       <View style={styles.container}>
         <View style={styles.statusContainer}>
           <View style={styles.statusAvatar}>
-            <MockAvatar avatar='../assets/avatars/StatusAvatar.png' size={58} />
+            <MockAvatar avatar="../assets/avatars/StatusAvatar.png" size={58} />
           </View>
           <View style={styles.flexGrow}>
             <Text style={styles.status}>My Status</Text>
@@ -22,7 +25,7 @@ export default function Status() {
             <TouchableOpacity>
               <CameraButtonIcon />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('TypeStatus')}>
               <EditButtonIcon />
             </TouchableOpacity>
           </View>

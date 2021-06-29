@@ -4,7 +4,7 @@ import { StyleSheet, ScrollView, View, Image } from 'react-native';
 import Bio from './components/Bio';
 import InfoHeader from './components/InfoHeader';
 import NameActions from './components/NameActions';
-import LinkItem from './components/LinkItem';
+import LinkItem from '../../components/LinkItem';
 import EditContact from './components/EditContact';
 
 export default function ContactInfo() {

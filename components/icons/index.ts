@@ -17,3 +17,4 @@ export { default as CallIcon } from './CallIcon';
 export { default as AddIcon } from './AddIcon';
 export { default as StickersIcon } from './StickersIcon';
 export { default as RecordAudioIcon } from './RecordAudioIcon';
+export { default as StarredIcon } from './StarredIcon';

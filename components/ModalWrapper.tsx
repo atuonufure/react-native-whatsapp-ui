@@ -30,6 +30,8 @@ export default function ModalWrapper() {
         'Contact',
       ];
       break;
+    case 'tell-a-friend':
+      modalItems = ['Mail', 'Message', 'More'];
   }
 
   return (

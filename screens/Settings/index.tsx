@@ -6,12 +6,17 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
+import { useDispatch } from 'react-redux';
+
+import { setModalType, setModalWindow } from '../../redux/modalSlice';
 
 import { Header, MockAvatar, LinkItem } from '../../components';
 
 import { RightArrowIcon } from '../../components/icons';
 
 export default function Settings() {
+  const dispatch = useDispatch();
+
   return (
     <>
       <Header center="Settings" />
@@ -42,7 +47,14 @@ export default function Settings() {
         </View>
         <View style={styles.links}>
           <LinkItem icon="Help" title="Help" />
-          <LinkItem icon="Heart" title="Tell a Friend" />
+          <LinkItem
+            icon="Heart"
+            title="Tell a Friend"
+            action={() => {
+              dispatch(setModalType('tell-a-friend'));
+              dispatch(setModalWindow(true));
+            }}
+          />
         </View>
         <Text style={styles.fromFacebook}>WhatsApp from Facebook</Text>
       </ScrollView>

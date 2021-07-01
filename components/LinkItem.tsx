@@ -18,12 +18,19 @@ type LinkItemType = {
   title: string;
   value?: string;
   border?: string;
+  action?: () => void;
 };
 
-export default function LinkItem({ icon, title, value, border }: LinkItemType) {
+export default function LinkItem({
+  icon,
+  title,
+  value,
+  border,
+  action,
+}: LinkItemType) {
   return (
     <>
-      <TouchableOpacity style={styles.container}>
+      <TouchableOpacity style={styles.container} onPress={action}>
         <View
           style={{
             flexDirection: 'row',

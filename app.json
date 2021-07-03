@@ -1,32 +1,16 @@
 {
   "expo": {
-    "name": "whatsapp-ui",
-    "slug": "whatsapp-ui",
-    "version": "1.0.0",
-    "orientation": "portrait",
+    "name": "WhatsApp UI",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
-    "userInterfaceStyle": "automatic",
-    "splash": {
-      "image": "./assets/images/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": ["**/*"],
+    "version": "1.0.0",
+    "slug": "whatsapp-ui",
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.atuonufure.whatsappui",
+      "buildNumber": "1.0.0"
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
-    },
-    "web": {
-      "favicon": "./assets/images/favicon.png"
+      "package": "com.atuonufure.whatsappui",
+      "versionCode": 1
     }
   }
 }

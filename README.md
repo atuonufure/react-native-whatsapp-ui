@@ -1,5 +1,7 @@
 ## WhatsApp UI
 
+To test the application on Android, you can install the APK, which is located in the [releases section](https://github.com/atuonufure/react-native-whatsapp-ui/releases/)
+
 ## Tech 🛠
 
 - [React Native](https://reactnative.dev/)

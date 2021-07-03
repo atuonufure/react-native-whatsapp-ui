@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { MockAvatar } from '../../../components';
 
 import CallIcon from '../icons/CallIcon';
 import InfoIcon from '../icons/InfoIcon';
 
-import { CallType } from '..';
+import { CallType } from '../index';
 
 type CallItemType = {
   call: CallType;
@@ -14,22 +14,30 @@ type CallItemType = {
 
 export default function CallItem({ call }: CallItemType) {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container}>
       <View style={styles.avatarContainer}>
         <MockAvatar avatar={call.avatar} size={40} />
       </View>
       <View style={styles.userConatiner}>
-        <Text style={styles.userName}>{call.name}</Text>
-        <View style={{ flexDirection: 'row' }}>
-          <CallIcon style={{ marginTop: 4 }} />
+        <Text
+          style={[
+            styles.userName,
+            call.type === 'missed' ? styles.missed : null,
+          ]}>
+          {call.name}
+        </Text>
+        <View style={styles.call}>
+          <CallIcon style={styles.callIcon} />
           <Text style={styles.callType}>{call.type}</Text>
         </View>
       </View>
       <View style={styles.dateContainer}>
         <Text style={styles.date}>{call.date}</Text>
-        <InfoIcon />
+        <TouchableOpacity>
+          <InfoIcon />
+        </TouchableOpacity>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -58,5 +66,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingRight: 17,
   },
-  date: { color: '#8E8E93', fontSize: 14, paddingRight: 10 },
+  date: { color: '#8E8E93', fontSize: 14, paddingRight: 10, width: 70 },
+  callIcon: { marginTop: 4 },
+  call: { flexDirection: 'row' },
+  missed: { color: '#FF0000' },
 });

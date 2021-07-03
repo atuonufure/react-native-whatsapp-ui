@@ -1,15 +1,15 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 export default function Tabs() {
   return (
     <View style={styles.container}>
-      <View style={styles.leftTab}>
+      <TouchableOpacity style={styles.leftTab}>
         <Text style={styles.all}>All</Text>
-      </View>
-      <View style={styles.rightTab}>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.rightTab}>
         <Text style={styles.missed}>Missed</Text>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 }

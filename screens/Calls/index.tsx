@@ -1,5 +1,12 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
 
 import CallItem from './components/CallItem';
 import Tabs from './components/Tabs';
@@ -27,9 +34,13 @@ export default function Calls() {
     <View style={styles.container}>
       <View>
         <View style={styles.tabsContainer}>
-          <Text style={{ color: '#007AFF', fontSize: 17 }}>Edit</Text>
+          <TouchableOpacity>
+            <Text style={{ color: '#007AFF', fontSize: 17 }}>Edit</Text>
+          </TouchableOpacity>
           <Tabs />
-          <CallPlusIcon />
+          <TouchableOpacity>
+            <CallPlusIcon />
+          </TouchableOpacity>
         </View>
         <ScrollView>
           {calls &&
